@@ -1,0 +1,271 @@
+$main-bgc: rgb(229, 229, 229);
+$main-blue: rgb(0, 52, 154);
+
+$header-overlay: rgba(75, 109, 178, 0.4);
+$blue-overlay: rgba(0, 52, 154, 0.53);
+$white-overlay: rgba(254, 241, 231, 0.2);
+
+$lightblue: rgb(92, 141, 240);
+$darkblue1: rgb(14, 23, 53);
+$darkblue2: rgb(27, 28, 87);
+$darkblue3: rgb(60, 69, 99);
+
+$lightgreen1: rgb(33, 165, 143);
+$lightgreen2: rgba(33, 165, 143, 0.4);
+
+$grey1: rgb(51, 51, 51);
+$grey2: rgb(130, 130, 130);
+$grey3: rgb(136, 139, 151);
+$grey4: rgb(242, 242, 242);
+$white: rgb(255, 255, 255);
+
+$explore-grey1: rgb(224, 224, 224);
+$explore-green: rgb(183, 251, 72);
+$explore-orange: rgb(255, 172, 51);
+$explore-grey2: rgb(212, 233, 254);
+
+$section-margin: 50px 0;
+$section-padding: 20px 70px;
+
+.my-apartment-heading {
+  margin-bottom: 50px;
+
+  .heading-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .blue-btn {
+    background-color: $main-blue;
+    color: $white;
+    padding: 10px 20px;
+    border-radius: 2px;
+  }
+  .agent-details {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    h3 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 30px;
+      text-align: center;
+      color: #333333;
+    }
+    .icon {
+      color: $main-blue;
+      margin-left: 20px;
+    }
+    .special-ls {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 26px;
+      text-align: center;
+      color: #4f4f4f;
+      background: #ffffff;
+      border: 2px solid #f2f2f2;
+      box-sizing: border-box;
+      border-radius: 4px;
+      padding: 2px 5px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .special-l {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 20px;
+      color: #bdbdbd;
+    }
+    .dot {
+      font-size: 0.5em;
+      margin: 0 5px;
+    }
+  }
+}
+
+.my-apartment {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .post-card {
+    margin: 20px 20px;
+    width: 190px;
+    background-color: $white;
+    box-shadow: 1px 1px 5px $explore-grey2;
+  }
+
+  .post-image {
+    width: inherit;
+    height: 220px;
+    border-radius: 10px;
+    background-color: $grey3;
+
+    img {
+      width: 100%;
+      height: inherit;
+    }
+  }
+
+  .body {
+    padding: 10px;
+    font-size: 0.8rem;
+  }
+  .post-title {
+    color: $darkblue1;
+    padding-top: 5px;
+    font-family: "Gordita Regular", sans-serif;
+  }
+
+  .price {
+    color: $grey1;
+    padding-top: 5px;
+    font-size: 0.8em;
+    font-family: "Gordita Regular", sans-serif;
+  }
+
+  .details {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .amenities {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    color: $grey1;
+    font-size: 0.9em;
+    .toilet,
+    .parlor {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dot {
+      font-size: 0.5em;
+    }
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .user-avatar {
+    width: 25px;
+    height: 25px;
+    background-color: $grey3;
+    border-radius: 50%;
+  }
+
+  .user-details {
+    margin-left: 10px;
+    font-size: 0.9em;
+  }
+
+  .name {
+    color: $darkblue1;
+  }
+
+  .location {
+    color: $grey2;
+    font-size: 0.85em;
+  }
+  .delete-btn {
+    button {
+      color: #fb5448;
+      font-weight: bold;
+      padding: 10px 0;
+      font-size: 0.85em;
+    }
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .my-apartment {
+    .post-card {
+      width: 210px;
+    }
+
+    .post-image {
+      height: 240px;
+    }
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .my-apartment {
+    .post-card {
+      width: 230px;
+    }
+
+    .post-image {
+      height: 260px;
+    }
+  }
+}
+@media screen and (max-width: 650px) {
+  .my-apartment {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .post-card {
+      width: 270px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .post-image {
+      height: 300px;
+    }
+  }
+}
+
+.apartments-section {
+  margin: $section-margin;
+  padding: $section-padding;
+  width: 100%;
+  background-color: $white;
+  color: $grey1;
+
+  h2 {
+    padding-bottom: 1em;
+    font-family: "Gordita Bold", sans-serif;
+    font-size: 1.7em;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  $section-padding: 20px 50px;
+
+  .apartments-section {
+    padding: $section-padding;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  $section-padding: 20px 30px;
+
+  .apartments-section {
+    padding: $section-padding;
+  }
+}

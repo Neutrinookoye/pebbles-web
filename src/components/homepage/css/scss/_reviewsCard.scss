@@ -1,0 +1,149 @@
+@import "variables";
+
+.reviews-cntr {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+
+  .review-card {
+    margin: 30px;
+    margin-bottom: 70px;
+    width: 500px;
+    background-color: $white;
+    position: relative;
+  }
+
+  .review-card:first-child {
+    margin-left: 0px;
+  }
+
+  .review-card:last-child {
+    margin-right: 0px;
+  }
+
+  .review-image {
+    width: inherit;
+    height: 250px;
+    border-radius: 10px;
+    background-color: $grey3;
+
+    img {
+      width: 100%;
+      height: inherit;
+    }
+  }
+
+  .body {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: -50px;
+    margin: 0 40px;
+    padding: 20px 40px;
+    box-shadow: 0px 9px 32px 0px rgba(89, 92, 219, 0.1);
+    background-color: $white;
+  }
+
+  .review-title {
+    color: $darkblue1;
+    font-family: "Gordita Regular", sans-serif;
+    font-size: 1.25em;
+    margin-bottom: 0.5em;
+  }
+
+  .description {
+    color: $grey1;
+    padding-top: 5px;
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+  }
+
+  .user-info {
+    width: 100%;
+    font-size: 0.95em;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .user-avatar {
+    width: 30px;
+    height: 30px;
+    background-color: $grey3;
+    border-radius: 50%;
+  }
+
+  .user-details {
+    margin-left: 10px;
+    font-size: 0.8em;
+  }
+
+  .name {
+    color: $darkblue1;
+  }
+
+  .job {
+    color: $grey2;
+    font-size: 0.85em;
+  }
+
+  .ratings {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 0.8em;
+  }
+
+  .ratings-star {
+    color: rgba(245, 158, 11, 1);
+    margin-right: 10px;
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .reviews-cntr {
+    .review-card {
+      width: 400px;
+      margin: 20px;
+      margin-bottom: 100px;
+    }
+    .body {
+      bottom: -80px;
+      margin: 0 20px;
+      padding: 20px;
+      box-shadow: 0px 9px 32px 0px rgba(89, 92, 219, 0.1);
+      background-color: $white;
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .reviews-cntr {
+    .review-card {
+      width: 350px;
+      margin-bottom: 120px;
+    }
+    .body {
+      bottom: -100px;
+    }
+  }
+}
+@media screen and (max-width: 390px) {
+  .reviews-cntr {
+    .review-card {
+      width: 300px;
+      margin: 20px;
+      margin-bottom: 160px;
+    }
+    .body {
+      bottom: -140px;
+    }
+  }
+}

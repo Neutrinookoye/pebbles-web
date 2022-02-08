@@ -1,0 +1,605 @@
+.apartment-info-heading {
+  margin: 50px 0;
+  padding: 20px 70px;
+  width: 100%;
+
+  .heading-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .apartment-details {
+      margin-bottom: 30px;
+      h1 {
+        font-family: "Gordita Medium";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 43px;
+        color: #4f4f4f;
+      }
+      .ratings-card {
+        margin: 10px 0 20px;
+        color: #4f4f4f;
+        font-weight: bold;
+
+        .star {
+          color: yellow;
+          margin-right: 10px;
+        }
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        // margin-top: 30px;
+        button {
+          background: #ffffff;
+          border: 2px solid #f2f2f2;
+          box-sizing: border-box;
+          border-radius: 4px;
+          padding: 5px 20px;
+          outline: none;
+          //   font-family: Gordita;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 22px;
+          text-align: center;
+          color: #747474;
+        }
+      }
+    }
+
+    .agent-details {
+      text-align: center;
+      h3 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 30px;
+        text-align: center;
+        color: #333333;
+      }
+      .special-ls {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 26px;
+        text-align: center;
+        color: #4f4f4f;
+        background: #ffffff;
+        border: 2px solid #f2f2f2;
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding: 2px 5px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+
+      .icon {
+        color: rgb(0, 52, 154);
+        margin-left: 20px;
+      }
+
+      .special-l {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 20px;
+        color: #bdbdbd;
+      }
+    }
+  }
+}
+
+.apartment-info-body {
+  margin: 50px 0;
+  padding: 20px 70px;
+  width: 100%;
+
+  .body-wrapper {
+    .apartment-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 70px;
+
+      .apartment-img-container {
+        img {
+          width: 100%;
+        }
+      }
+      .apartment-img-container:last-child {
+        position: relative;
+      }
+      .more-photos {
+        position: absolute;
+        bottom: 50px;
+        right: 50px;
+        background: #ffffff;
+        border-radius: 4px;
+        padding: 6px;
+
+        a {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 13px;
+          line-height: 15px;
+          letter-spacing: 0.01em;
+          color: #4368b2;
+        }
+      }
+    }
+    .apartment__info__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 20px 0;
+
+      .apartment-description {
+        margin-right: 20px;
+        width: 50%;
+        .rooms {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          // justify-content: space-between;
+          // align-items: flex-start;
+          span {
+            border: 2px solid #f2f2f2;
+            border-radius: 4px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          span:last-child {
+            margin-right: 0;
+          }
+          .numbers {
+            color: #4368b2;
+            font-size: 2em;
+          }
+        }
+
+        .description {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 21px;
+          text-align: justify;
+          color: #333333;
+        }
+      }
+
+      .buy-ticket-btn {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        p {
+          width: 120px;
+        }
+
+        .cta-delete {
+          padding: 10px 20px;
+          cursor: pointer;
+          height: 40px;
+          background: #ec3c4a;
+          border-radius: 4px;
+          font-size: 14px;
+          line-height: 20px;
+          text-align: center;
+          letter-spacing: 0.05em;
+          color: #ffffff;
+        }
+
+        .cta-edit,
+        .cta-price {
+          background: #ffffff;
+          border: 1px solid #00349a;
+          box-sizing: border-box;
+          border-radius: 4px;
+          padding: 10px 20px;
+          cursor: pointer;
+          height: 40px;
+          font-size: 14px;
+          line-height: 20px;
+          text-align: center;
+          letter-spacing: 0.05em;
+          color: #4368b2;
+        }
+      }
+    }
+  }
+}
+
+.apartments-side-attractions {
+  margin: 50px 0;
+  padding: 20px 70px;
+  width: 100%;
+
+  .attraction-wrapper {
+    width: 100%;
+    .title {
+      h2 {
+        font-family: "Gordita Medium";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.9em;
+        line-height: 43px;
+        color: #333333;
+      }
+      p {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 26px;
+        color: #000000;
+      }
+    }
+
+    .body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-top: 20px;
+
+      figure {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff;
+        border: 2px solid #f2f2f2;
+        border-radius: 5px;
+        text-align: center;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+      }
+      img {
+        height: 50px;
+      }
+    }
+
+    .attractions-link {
+      margin-top: 20px;
+      a {
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 26px;
+        text-decoration-line: underline;
+        color: #4368b2;
+      }
+    }
+  }
+}
+.my-apartment-info-reviews {
+  margin: 50px 0;
+  padding: 20px 70px;
+  width: 100%;
+
+  .review-wrapper {
+    width: 100%;
+  }
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    h2 {
+      font-family: "Gordita Medium";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.9em;
+      line-height: 43px;
+      color: #333333;
+    }
+    p {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 26px;
+      color: #000000;
+    }
+    .add-review {
+      padding: 10px 20px;
+      cursor: pointer;
+      height: 40px;
+      background: rgb(0, 52, 154);
+      border-radius: 4px;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+    }
+  }
+  .reviews-cntr {
+    display: flex;
+    margin: 20px 0 40px;
+    gap: 80px;
+  }
+  .post-card {
+    margin-top: 20px;
+  }
+  .details {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  .user-details {
+    display: flex;
+    align-items: center;
+  }
+  .avatar {
+    width: 50px;
+    height: 50px;
+    img {
+      width: inherit;
+      height: inherit;
+    }
+  }
+  .user {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 10px;
+  }
+  .job {
+    color: #bdbdbd;
+  }
+  .date {
+    color: #bdbdbd;
+    font-size: 0.65em;
+  }
+  .review {
+    margin: 20px 0;
+    text-align: justify;
+  }
+  .footer {
+    display: flex;
+    position: relative;
+  }
+  .view-more {
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 26px;
+    text-decoration-line: underline;
+    color: #4368b2;
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 200px;
+    left: calc(50% - 100px);
+    .prev {
+      background-color: #4368b2;
+    }
+    .next {
+      background-color: #00349a;
+    }
+  }
+  .prev,
+  .next {
+    width: 35px;
+    height: 35px;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .indicator {
+    color: #bdbdbd;
+    font-size: 0.5em;
+    margin: 0 5px;
+  }
+}
+.map-cntr {
+  margin: 50px 0;
+  padding: 20px 70px;
+  .map-wrapper {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.subscription {
+  margin: 50px 0;
+  padding: 20px 70px 20px;
+  text-align: center;
+
+  .subscription-wrapper {
+    width: 100%;
+    h2 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.9em;
+      line-height: 43px;
+      text-align: center;
+      color: #333333;
+      font-family: "Gordita Medium";
+      // width: 400px;
+    }
+    p {
+      font-weight: normal;
+      font-family: "Gordita Medium";
+      font-size: 13px;
+      line-height: 26px;
+      color: #333333;
+      margin: 20px 0;
+    }
+
+    .sub-form {
+      .form-input-group {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        input {
+          padding: 10px;
+        }
+        button {
+          font-size: 1rem;
+          padding: 10px 20px;
+          background: #00349a;
+          border-radius: 4px;
+          color: #ffffff;
+          border: none;
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+.search-links {
+  margin: 50px 0;
+  padding: 20px 70px;
+  width: 100%;
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .cntr {
+    max-width: 250px;
+  }
+  .heading {
+    color: rgb(0, 52, 154);
+    margin-bottom: 1em;
+    font-family: "Gordita Bold", sans-serif;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .apartment-info-body {
+    .body-wrapper {
+      .apartment__info__wrapper {
+        .apartment-description {
+          width: initial;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  nav {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+}
+@media screen and (max-width: 670px) {
+  .apartment-info-heading {
+    .heading-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+  .apartment-info-body {
+    .body-wrapper {
+      .apartment-images {
+        grid-template-columns: 1fr 1fr;
+      }
+      .apartment__info__wrapper {
+        flex-direction: column;
+        .buy-ticket-btn {
+          gap: 10px;
+        }
+
+        .apartment-description {
+          margin-right: 0px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  .apartments-side-attractions {
+    .attraction-wrapper {
+      .body {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        img {
+          height: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .apartment-info-heading {
+    .heading-wrapper {
+      .apartment-details {
+        .tags {
+          gap: 10px;
+        }
+      }
+    }
+  }
+
+  .apartment-info-body {
+    .body-wrapper {
+      .apartment-images {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+  .subscription {
+    margin: 50px 0;
+    padding: 20px 70px 20px;
+    text-align: center;
+
+    .subscription-wrapper {
+      .sub-form {
+        .form-input-group {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          input {
+            width: 300px;
+          }
+          button {
+            width: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .apartment-info-heading,
+  .apartment-info-body,
+  .apartments-side-attractions,
+  .my-apartment-info-reviews,
+  .map-cntr,
+  .subscription,
+  .search-links {
+    padding: 20px 50px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .apartment-info-heading,
+  .apartment-info-body,
+  .apartments-side-attractions,
+  .my-apartment-info-reviews,
+  .map-cntr,
+  .subscription,
+  .search-links {
+    padding: 20px 30px;
+  }
+}

@@ -1,0 +1,102 @@
+@import "variables";
+
+.featured-houses {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+
+  .post-card {
+    margin: 20px 20px;
+    width: 190px;
+    background-color: $white;
+    box-shadow: 1px 1px 5px $explore-grey2;
+  }
+
+  .post-card:first-child {
+    margin-left: 0px;
+  }
+
+  .post-card:last-child {
+    margin-right: 0px;
+  }
+
+  .post-image {
+    width: inherit;
+    height: 220px;
+    border-radius: 10px;
+    background-color: $grey3;
+
+    img {
+      width: 100%;
+      height: inherit;
+    }
+  }
+
+  .body {
+    padding: 10px;
+    font-size: 0.8rem;
+  }
+  .post-title {
+    color: $darkblue1;
+    padding-top: 5px;
+    font-family: "Gordita Regular", sans-serif;
+  }
+
+  .price {
+    color: $grey1;
+    padding-top: 5px;
+    font-size: 0.8em;
+    font-family: "Gordita Regular", sans-serif;
+  }
+
+  .details {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .amenities {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    color: $grey1;
+    font-size: 0.9em;
+    .toilet,
+    .parlor {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dot {
+      font-size: 0.5em;
+    }
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .user-avatar {
+    width: 25px;
+    height: 25px;
+    background-color: $grey3;
+    border-radius: 50%;
+  }
+
+  .user-details {
+    margin-left: 10px;
+    font-size: 0.9em;
+  }
+
+  .name {
+    color: $darkblue1;
+  }
+
+  .location {
+    color: $grey2;
+    font-size: 0.85em;
+  }
+}

@@ -1,0 +1,401 @@
+.event-info-heading {
+  margin: 50px 0;
+  padding: 20px 70px;
+  width: 100%;
+
+  .heading-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .event-details {
+      margin-bottom: 30px;
+      h1 {
+        font-family: "Gordita Medium";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 43px;
+        color: #4f4f4f;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 30px;
+        button {
+          background: #ffffff;
+          border: 2px solid #f2f2f2;
+          box-sizing: border-box;
+          border-radius: 4px;
+          padding: 5px 20px;
+          outline: none;
+          //   font-family: Gordita;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 22px;
+          text-align: center;
+          color: #747474;
+        }
+      }
+    }
+
+    .agent-details {
+      text-align: center;
+      h3 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 30px;
+        text-align: center;
+        color: #333333;
+      }
+      .special-ls {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 26px;
+        text-align: center;
+        color: #4f4f4f;
+        background: #ffffff;
+        border: 2px solid #f2f2f2;
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding: 2px 5px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+      .special-l {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 20px;
+        color: #bdbdbd;
+      }
+    }
+  }
+}
+
+.event-info-body {
+  margin: 50px 0;
+  padding: 20px 70px;
+  width: 100%;
+
+  .body-wrapper {
+    .event-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 70px;
+
+      .event-img-container {
+        img {
+          width: 100%;
+        }
+      }
+      .event-img-container:last-child {
+        position: relative;
+      }
+      .more-photos {
+        position: absolute;
+        bottom: 50px;
+        right: 50px;
+        background: #ffffff;
+        border-radius: 4px;
+        padding: 6px;
+
+        a {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 13px;
+          line-height: 15px;
+          letter-spacing: 0.01em;
+          color: #4368b2;
+        }
+      }
+    }
+    .event__info__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 20px 0;
+
+      .event-description {
+        margin-right: 20px;
+        width: 600px;
+        max-width: 100%;
+        p {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 21px;
+          text-align: justify;
+          color: #333333;
+        }
+      }
+
+      .buy-ticket-btn {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .cta-ticket1 {
+          padding: 10px 20px;
+          cursor: pointer;
+          height: 40px;
+          background: #00349a;
+          border-radius: 4px;
+          font-size: 14px;
+          line-height: 20px;
+          text-align: center;
+          letter-spacing: 0.05em;
+          color: #ffffff;
+          border: 0.5px solid #ffffff;
+        }
+
+        .cta-ticket2 {
+          background: #ffffff;
+          border: 1px solid #00349a;
+          box-sizing: border-box;
+          border-radius: 4px;
+          padding: 10px 20px;
+          cursor: pointer;
+          height: 40px;
+          font-size: 14px;
+          line-height: 20px;
+          text-align: center;
+          letter-spacing: 0.05em;
+          color: #4368b2;
+        }
+      }
+    }
+  }
+}
+
+.events-side-attractions {
+  margin: 50px 0;
+  padding: 20px 70px;
+  width: 100%;
+
+  .attraction-wrapper {
+    width: 100%;
+    .title {
+      h2 {
+        font-family: "Gordita Medium";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.9em;
+        line-height: 43px;
+        color: #333333;
+      }
+      p {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 26px;
+        color: #000000;
+      }
+    }
+
+    .body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-top: 20px;
+
+      figure {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff;
+        border: 2px solid #f2f2f2;
+        border-radius: 5px;
+        text-align: center;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+      }
+      img {
+        height: 50px;
+      }
+    }
+
+    .attractions-link {
+      margin-top: 20px;
+      a {
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 26px;
+        text-decoration-line: underline;
+        color: #4368b2;
+      }
+    }
+  }
+}
+
+.map-cntr {
+  margin: 50px 0;
+  padding: 20px 70px;
+  .map-wrapper {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.subscription {
+  margin: 50px 0;
+  padding: 20px 70px 20px;
+  text-align: center;
+
+  .subscription-wrapper {
+    width: 100%;
+    h2 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.9em;
+      line-height: 43px;
+      text-align: center;
+      color: #333333;
+      font-family: "Gordita Medium";
+      // width: 400px;
+    }
+    p {
+      font-weight: normal;
+      font-family: "Gordita Medium";
+      font-size: 13px;
+      line-height: 26px;
+      color: #333333;
+      margin: 20px 0;
+    }
+
+    .sub-form {
+      .form-input-group {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        input {
+          padding: 10px;
+        }
+        button {
+          font-size: 1rem;
+          padding: 10px 20px;
+          background: #00349a;
+          border-radius: 4px;
+          color: #ffffff;
+          border: none;
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .event-info-heading {
+    .heading-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+  .event-info-body {
+    .body-wrapper {
+      .event-images {
+        grid-template-columns: 1fr 1fr;
+      }
+      .event__info__wrapper {
+        flex-direction: column;
+        .buy-ticket-btn {
+          flex-wrap: nowrap;
+          gap: 10px;
+        }
+
+        .event-description {
+          margin-right: 0px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  .events-side-attractions {
+    .attraction-wrapper {
+      .body {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        img {
+          height: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .event-info-heading {
+    .heading-wrapper {
+      .event-details {
+        .tags {
+          gap: 10px;
+        }
+      }
+    }
+  }
+
+  .event-info-body {
+    .body-wrapper {
+      .event-images {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+  .subscription {
+    margin: 50px 0;
+    padding: 20px 70px 20px;
+    text-align: center;
+
+    .subscription-wrapper {
+      .sub-form {
+        .form-input-group {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          input {
+            width: 300px;
+          }
+          button {
+            width: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .event-info-heading,
+  .event-info-body,
+  .events-side-attractions,
+  .map-cntr,
+  .subscription {
+    padding: 20px 50px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .event-info-heading,
+  .event-info-body,
+  .events-side-attractions,
+  .map-cntr,
+  .subscription {
+    padding: 20px 30px;
+  }
+}

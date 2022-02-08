@@ -1,0 +1,115 @@
+@import "variables";
+
+.explore-apartments {
+  margin: $section-margin;
+  margin-top: 100px;
+  padding: $section-padding;
+  width: 100%;
+  background-color: rgba(92, 141, 240, 0.05);
+  color: $grey1;
+
+  h2 {
+    padding-bottom: 1em;
+    font-family: "Gordita Bold", sans-serif;
+    font-size: 1.7em;
+  }
+
+  .explore-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .individual-card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 25%;
+  }
+
+  .image {
+    width: 80px;
+    height: 80px;
+
+    img {
+      width: inherit;
+      height: inherit;
+      border-radius: 5px;
+    }
+  }
+
+  .details {
+    padding-left: 10px;
+    font-size: 0.6em;
+    width: 100%;
+  }
+
+  .location {
+    font-family: "Gordita Bold", sans-serif;
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .explore-apartments {
+    .explore-cards {
+      flex-wrap: wrap;
+    }
+
+    .individual-card {
+      width: 50%;
+    }
+
+    .image {
+      height: 100px;
+      width: 100px;
+    }
+
+    .details {
+      font-size: 0.8em;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .explore-apartments {
+    .individual-card {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .image {
+      height: 250px;
+      width: 250px;
+    }
+
+    .details {
+      padding-left: 0px;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      justify-self: flex-start;
+      width: 250px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1em;
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  $section-padding: 20px 50px;
+
+  .explore-apartments {
+    padding: $section-padding;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  $section-padding: 20px 30px;
+
+  .explore-apartments {
+    margin-top: 100px;
+    padding: $section-padding;
+  }
+}

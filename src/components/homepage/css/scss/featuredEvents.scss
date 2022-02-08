@@ -1,0 +1,30 @@
+@import "variables";
+
+// featured houses card
+@import "featuredEventsCard";
+
+// featured houses navbar
+@import "featuredEventsNavbar";
+
+.feat-events-section {
+  margin: $section-margin;
+  padding: $section-padding;
+  width: 100%;
+  background-color: $white;
+}
+
+@media screen and (max-width: 780px) {
+  $section-padding: 20px 50px;
+
+  .feat-events-section {
+    padding: $section-padding;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  $section-padding: 20px 30px;
+
+  .feat-events-section {
+    padding: $section-padding;
+  }
+}

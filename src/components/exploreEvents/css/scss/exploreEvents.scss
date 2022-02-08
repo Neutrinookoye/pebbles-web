@@ -1,0 +1,33 @@
+@import "variables";
+@import "eventsCard";
+
+.events-section {
+  margin: $section-margin;
+  margin-top: 100px;
+  padding: $section-padding;
+  width: 100%;
+  background-color: $white;
+  color: $grey1;
+
+  h2 {
+    padding-bottom: 1em;
+    font-family: "Gordita Bold", sans-serif;
+    font-size: 1.7em;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  $section-padding: 20px 50px;
+
+  .events-section {
+    padding: $section-padding;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  $section-padding: 20px 30px;
+
+  .events-section {
+    padding: $section-padding;
+  }
+}

@@ -1,0 +1,268 @@
+.wrapper {
+  width: 100%;
+  padding: 0 20px;
+  /* margin: 3rem auto; */
+  /* background: hotpink; */
+}
+
+.container {
+  display: grid;
+  justify-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 4rem;
+  /* margin: 3rem 70px; */
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+}
+
+.pageHeading h2 {
+  padding: 0.5rem 0;
+  font-family: 'Gordita Bold';
+  font-size: 16px;
+  text-align: center;
+  line-height: 61px;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.img img {
+  width: 100%;
+}
+
+.title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 32px;
+  margin-bottom: 0.3rem;
+  color: #0E1735;
+}
+.price {
+  font-size: 16px;
+  line-height: 1.5rem;
+  margin-bottom: 0.3rem;
+  color: #333333;
+}
+.amenities {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 13px;
+  font-family: 'Gordita regular';
+  line-height: 1.5rem;
+  align-items: center;
+}
+
+.dot {
+  font-size: 0.3em;
+}
+
+.owner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.avatar {
+  width: 30px;
+  height: 30px;
+  margin-right: 1rem;
+}
+.location {
+  font-family: 'Gordita Light';
+  font-size: 12px;
+  font-weight: 100;
+  color: #888b97;
+  line-height: 1.25rem;
+}
+.aprt {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.name {
+  font-size: 14px;
+}
+
+@media (min-width: 320px) {
+  .wrapper {
+    margin: 2rem auto;
+  }
+  .pageHeading h2 {
+    padding: 1rem 0;
+    font-family: 'Gordita Bold';
+    font-size: 20px;
+    text-align: center;
+    line-height: 61px;
+  }
+
+  .container {
+    margin: 1rem auto;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .body {
+    margin-top: 0.1rem;
+  }
+
+  .title {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 0.2rem;
+  }
+
+  .price {
+    font-size: 12px;
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-family: "Gordita Regular";
+  }
+
+  .amenities {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 480px) {
+  .pageHeading h2 {
+    padding: 1rem 0;
+    font-family: 'Gordita Bold';
+    font-size: 24px;
+    text-align: center;
+    line-height: 61px;
+  }
+
+  .wrapper {
+    margin: 4rem auto;
+  }
+  .container {
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 0.3rem;
+  }
+
+  .price {
+    font-size: 14px;
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .amenities {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 640px) {
+  .wrapper {
+    padding: 0 50px;
+  }
+  .pageHeading h2 {
+    padding: 1.5rem 0;
+    font-family: 'Gordita Bold';
+    font-size: 26px;
+    text-align: center;
+    line-height: 61px;
+  }
+  .container {
+    gap: 2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .amenities {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding: 0 20px;
+    margin: 5rem auto;
+  }
+  .pageHeading h2 {
+    padding: 1.5rem 0;
+    font-family: 'Gordita Bold';
+    font-size: 30px;
+    text-align: left;
+    line-height: 61px;
+  }
+  .container {
+    gap: 3rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .title {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 0.3rem;
+  }
+
+  .price {
+    font-size: 16px;
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .amenities {
+    flex-direction: row;
+  }
+}
+@media (min-width: 1024px) {
+  .wrapper {
+    padding: 0 70px;
+  }
+  .pageHeading h2 {
+    padding: 3rem 0;
+    font-family: 'Gordita Bold';
+    font-size: 1.9em;
+    text-align: left;
+    line-height: 61px;
+  }
+
+  .container {
+    gap: 4rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .title {
+    font-size: 18px;
+    line-height: 25px;
+    /* margin-bottom: 0.1rem; */
+  }
+
+  .price {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .amenities {
+    font-size: 16px;
+  }
+
+  .amenities {
+    font-size: 14px;
+  }
+}

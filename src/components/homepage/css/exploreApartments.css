@@ -1,0 +1,111 @@
+.explore-apartments {
+  margin: 50px 0;
+  margin-top: 100px;
+  padding: 30px 70px;
+  width: 100%;
+  background-color: rgba(92, 141, 240, 0.05);
+  color: #333333;
+}
+.explore-apartments h2 {
+  padding-bottom: 1em;
+  font-family: "Gordita Bold", sans-serif;
+  font-size: 1.9em;
+}
+.explore-apartments .explore-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.explore-apartments .individual-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  width: 25%;
+}
+.explore-apartments .image {
+  width: 90px;
+  height: 90px;
+}
+.explore-apartments .image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 5px;
+}
+.explore-apartments .details {
+  padding-left: 10px;
+  font-size: 0.8em;
+  width: 100%;
+}
+.explore-apartments .location {
+  font-family: "Gordita Bold", sans-serif;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .explore-apartments .explore-cards {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .explore-apartments .individual-card {
+    width: 50%;
+  }
+  .explore-apartments .image {
+    height: 100px;
+    width: 100px;
+  }
+  .explore-apartments .details {
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .explore-apartments .individual-card {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .explore-apartments .image {
+    height: 250px;
+    width: 250px;
+  }
+  .explore-apartments .details {
+    padding-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    justify-self: flex-start;
+    width: 250px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 780px) {
+  .explore-apartments {
+    padding: 20px 50px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .explore-apartments {
+    margin-top: 100px;
+    padding: 20px 30px;
+  }
+}

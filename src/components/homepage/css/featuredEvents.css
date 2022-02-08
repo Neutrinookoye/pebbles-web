@@ -1,0 +1,205 @@
+.slick-slide > div {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.featured-events {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+.featured-events .post-card {
+  margin: 20px 20px;
+  width: 190px;
+  background-color: white;
+  -webkit-box-shadow: 1px 1px 5px #d4e9fe;
+  box-shadow: 1px 1px 5px #d4e9fe;
+}
+.featured-events .post-card:first-child {
+  margin-left: 0px;
+}
+.featured-events .post-card:last-child {
+  margin-right: 0px;
+}
+.featured-events .post-image {
+  width: inherit;
+  height: 220px;
+  border-radius: 10px;
+  background-color: #888b97;
+}
+.featured-events .post-image img {
+  width: 100%;
+  height: inherit;
+}
+.featured-events .body {
+  padding: 10px;
+  font-size: 0.8rem;
+}
+.featured-events .post-title {
+  color: #0e1735;
+  padding-top: 5px;
+  font-family: "Gordita Regular", sans-serif;
+}
+.featured-events .price {
+  color: #333333;
+  padding-top: 5px;
+  font-size: 0.8em;
+  font-family: "Gordita Regular", sans-serif;
+}
+.featured-events .details {
+  width: 100%;
+  font-size: 0.95rem;
+}
+.featured-events .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.featured-events .event-avatar {
+  width: 25px;
+  height: 25px;
+  background-color: #888b97;
+  border-radius: 50%;
+}
+.featured-events .event-details {
+  margin-left: 10px;
+  font-size: 0.9em;
+}
+.featured-events .name {
+  color: #0e1735;
+}
+.featured-events .location {
+  color: #828282;
+  font-size: 0.85em;
+}
+
+.event-nav-cntr {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: white;
+  color: #00349a;
+  padding-bottom: 20px;
+}
+.event-nav-cntr .note {
+  color: #21a58f;
+  position: relative;
+  font-size: 0.6rem;
+  margin-left: 2em;
+  padding-left: 4px;
+  font-family: "Gordita Light", sans-serif;
+}
+.event-nav-cntr .note::before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 15px;
+  height: 1px;
+  background-color: #21a58f;
+  left: -2em;
+  top: 50%;
+}
+.event-nav-cntr .event-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.event-nav-cntr .title {
+  color: #333333;
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.event-nav-cntr h2 {
+  font-family: "Gordita Bold", sans-serif;
+  font-size: 1.9em;
+}
+.event-nav-cntr .event-nav-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40%;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.event-nav-cntr .nav-btns {
+  width: 50%;
+}
+.event-nav-cntr .nav-btns button {
+  width: 35px;
+  height: 30px;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  font-size: 0.7em;
+  margin: 5px;
+}
+.event-nav-cntr .nav-btns .prev-btn {
+  color: #0e1735;
+}
+.event-nav-cntr .nav-btns .next-btn {
+  color: #f2f2f2;
+  background-color: #00349a;
+}
+
+@media screen and (max-width: 690px) {
+  .event-nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .event-nav-cntr .title {
+    width: 100%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-bottom: 10px;
+  }
+  .event-nav-cntr .event-nav-btns {
+    width: 100%;
+  }
+}
+.feat-events-section {
+  margin: 50px 0;
+  padding: 20px 70px;
+  width: 100%;
+  background-color: white;
+}
+
+@media screen and (max-width: 780px) {
+  .feat-events-section {
+    padding: 20px 50px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .feat-events-section {
+    padding: 20px 30px;
+  }
+}

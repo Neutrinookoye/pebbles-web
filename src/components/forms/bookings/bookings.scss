@@ -1,0 +1,235 @@
+/** variables */
+$blue: rgba(0, 52, 154, 1);
+$blue2: #21a58f;
+$grey1: rgba(51, 51, 51, 1);
+$grey3: rgb(130, 130, 130);
+$border: 1px solid rgba(196, 196, 196);
+$overlay: rgba(92, 141, 240, 0.6);
+
+a,
+a:link,
+a:hover,
+a:active,
+a:visited {
+  color: $grey1;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+.image-wrapper.booking {
+  background-image: url("../img/form-images/boy-smiling.png");
+}
+
+.image-wrapper.complete-payment {
+  background-image: url("../img/form-images/girl-smelling-flowers.png");
+}
+
+.image-wrapper {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  .image-overlay {
+    background-color: $overlay;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 20px 70px;
+    position: relative;
+  }
+
+  .image-overlay > h3,
+  .image-overlay > p {
+    opacity: 1;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .image-overlay > p {
+    font-size: 2em;
+    font-family: "Gordita Ultra", sans-serif;
+  }
+
+  .image-overlay > h3 {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .image-wrapper {
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .image-overlay > p {
+    font-size: 1.5em;
+  }
+}
+
+.bookingPage {
+  background-color: white;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 40px;
+  width: 50%;
+  color: $grey1;
+
+  .booking-form {
+    width: 300px;
+    height: 100%;
+  }
+
+  .heading {
+    margin-bottom: 40px;
+  }
+
+  .heading > h1 {
+    font-family: "Gordita Bold", sans-serif;
+  }
+
+  .heading > h1,
+  .heading > p {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .heading > p {
+    color: $grey3;
+  }
+
+  .form-input-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .field-label {
+    margin-bottom: 10px;
+    color: $blue2;
+    font-size: 0.8em;
+  }
+
+  .form-input-label {
+    margin-bottom: 10px;
+    color: $grey3;
+  }
+
+  .form-input {
+    margin-bottom: 10px;
+    padding: 10px;
+    padding-left: 0;
+    border: none;
+    border-bottom: $border;
+    color: $grey1;
+  }
+  input::placeholder {
+    color: $grey1;
+  }
+
+  input[type="date"] {
+    color: $grey1;
+  }
+
+  input,
+  option {
+    font-size: 1em;
+    color: $grey1;
+  }
+
+  input:active {
+    border: none;
+  }
+
+  button.form-input {
+    background-color: $blue;
+    color: #ffffff;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin: 40px 0;
+  }
+
+  .form-input.total-cost {
+    border: none;
+    text-align: right;
+    color: $blue2;
+    background-color: transparent;
+    font-weight: bold;
+  }
+
+  .heading.event-heading {
+    margin-bottom: 0px;
+  }
+
+  .booking-form {
+    .p-center {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .booking-image-wrapper {
+      background-image: url("../img/form-images/event-image.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 200px;
+      height: 200px;
+      margin: 20px auto;
+    }
+
+    .booking-image-overlay {
+      background: rgba(0, 52, 154, 0.5);
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+    }
+
+    .form-input-group > button {
+      margin: 20px 0 0;
+    }
+
+    button.checkEvents-btn {
+      background-color: var(--blue2);
+    }
+  }
+  .envelope > img {
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+  }
+}

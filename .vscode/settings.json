@@ -1,0 +1,20 @@
+{
+  "emmet.triggerExpansionOnTab": true,
+  "tailwindCSS.emmetCompletions": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "cSpell.words": [
+    "fontawesome",
+    "Gbagada",
+    "goback",
+    "Gordita",
+    "Ikeja",
+    "setapartments",
+    "setbooking",
+    "setmake",
+    "Surulere",
+    "Yaba"
+  ]
+}

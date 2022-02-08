@@ -1,0 +1,90 @@
+@import "variables";
+
+.event-nav-cntr {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  color: $main-blue;
+  padding-bottom: 20px;
+
+  .note {
+    color: $lightgreen1;
+    position: relative;
+    font-size: 0.6rem;
+    margin-left: 2em;
+    padding-left: 4px;
+    font-family: "Gordita Light", sans-serif;
+  }
+
+  .note::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 15px;
+    height: 1px;
+    background-color: $lightgreen1;
+    left: -2em;
+    top: 50%;
+  }
+  .event-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title {
+    color: $grey1;
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  h2 {
+    font-family: "Gordita Bold", sans-serif;
+    font-size: 1.7em;
+  }
+
+  .event-nav-btns {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+  }
+
+  .nav-btns {
+    width: 50%;
+
+    button {
+      width: 35px;
+      height: 30px;
+      background-color: $grey4;
+      border-radius: 20px;
+      font-size: 0.7em;
+      margin: 5px;
+    }
+    .prev-btn {
+      color: $darkblue1;
+    }
+    .next-btn {
+      color: $grey4;
+      background-color: $main-blue;
+    }
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .event-nav {
+    flex-direction: column;
+  }
+  .event-nav-cntr {
+    .title {
+      width: 100%;
+      justify-content: space-between;
+      padding-bottom: 10px;
+    }
+    .event-nav-btns {
+      width: 100%;
+    }
+  }
+}

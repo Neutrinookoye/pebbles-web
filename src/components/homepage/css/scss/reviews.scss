@@ -1,0 +1,9 @@
+@import "variables";
+@import "reviewsCard";
+@import "userReviewNavbar";
+
+.user-reviews-section {
+  margin: $section-margin;
+  width: 100%;
+  background-color: $white;
+}

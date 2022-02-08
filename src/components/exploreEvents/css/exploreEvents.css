@@ -1,0 +1,127 @@
+.explore-events {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+.events-section {
+  margin: 50px 0;
+  margin-top: 100px;
+  padding: 20px 70px;
+  width: 100%;
+  background-color: white;
+  color: #333333;
+}
+.events-section h2 {
+  padding-bottom: 1em;
+  font-family: "Gordita Bold", sans-serif;
+  font-size: 1.9em;
+}
+
+.explore-events .post-card {
+  background: #f9f9f9;
+  -webkit-box-shadow: 1px 1px 5px #d4e9fe;
+  box-shadow: 1px 1px 5px #d4e9fe;
+}
+.explore-events .post-image {
+  width: inherit;
+  height: 220px;
+  border-radius: 10px;
+  background-color: #888b97;
+}
+.explore-events .post-image img {
+  width: 100%;
+  height: inherit;
+}
+.explore-events .body {
+  padding: 10px;
+  font-size: 0.8rem;
+}
+.explore-events .post-title {
+  color: #0e1735;
+  padding-top: 5px;
+  font-family: "Gordita Regular", sans-serif;
+}
+.explore-events .price {
+  color: #333333;
+  padding-top: 5px;
+  font-size: 0.8em;
+  font-family: "Gordita Regular", sans-serif;
+}
+.explore-events .events {
+  width: 100%;
+  font-size: 0.95rem;
+}
+.explore-events .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.explore-events .event-avatar {
+  width: 25px;
+  height: 25px;
+  background-color: #888b97;
+  border-radius: 50%;
+}
+.explore-events .event-details {
+  margin-left: 10px;
+  font-size: 0.9em;
+}
+.explore-events .name {
+  color: #0e1735;
+}
+.explore-events .location {
+  color: #828282;
+  font-size: 0.85em;
+}
+
+@media screen and (max-width: 860px) {
+  .explore-events {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 650px) {
+  .explore-events {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .explore-events {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .explore-events .post-image {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .explore-events {
+    grid-template-columns: 1fr;
+    padding: 0 10px !important;
+  }
+
+  .events-section {
+    margin: 50px 0;
+    margin-top: 100px;
+    padding: 20px 30px;
+    width: 100%;
+    background-color: white;
+    color: #333333;
+  }
+}

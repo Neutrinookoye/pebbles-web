@@ -1,0 +1,127 @@
+/** root file */
+:root {
+  /** variables */
+  --blue: rgba(0, 52, 154, 1);
+  --grey1: rgba(51, 51, 51, 1);
+  --grey3: rgba(130, 130, 130, 1);
+  --border: 1px solid rgba(196, 196, 196);
+}
+
+a,
+a:link,
+a:hover,
+a:active,
+a:visited {
+  color: var(--grey1);
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+/*! My CSS */
+.confirm-wrapper {
+  background-color: white;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 40px;
+  width: 50%;
+  color: var(--grey1);
+}
+
+.confirm-wrapper > .confirm-form {
+  width: 300px;
+  height: 100%;
+}
+
+.confirm-wrapper > .confirm-form > .heading {
+  margin-bottom: 40px;
+}
+
+.confirm-wrapper > .heading > h1 {
+  font-family: "Gordita Bold",sans-serif;
+}
+
+.confirm-wrapper > .heading > h1,
+.confirm-wrapper > .heading > p {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  justify-self: center;
+}
+.confirm-wrapper > .heading > p {
+  margin: 80px 0 40px;
+}
+
+.confirm-wrapper > .confirm-form > .digits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.confirm-wrapper > .confirm-form > .digits > .digit > .form-input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  border: var(--border);
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  color: var(--grey1);
+  font-size: 1em;
+}
+
+.confirm-wrapper > .confirm-form > .form-input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.confirm-wrapper > .confirm-form > .form-input-group > button {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  background-color: var(--blue);
+  color: #ffffff;
+  font-size: 1.2em;
+  border-radius: 5px;
+  margin: 40px 0;
+}
+
+.confirm-wrapper > .confirm-form > .more-options > p {
+  justify-self: flex-start;
+}
+
+.confirm-wrapper > .confirm-form > .more-options > p {
+  /* padding: 20px 0; */
+  margin: 0 auto;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  font-size: 0.8em;
+}
+
+.confirm-wrapper > .confirm-form > .more-options > p > a {
+  color: var(--grey1);
+  font-weight: 700;
+}

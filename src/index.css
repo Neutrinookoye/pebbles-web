@@ -1,0 +1,79 @@
+@import url('./assets/gordita-fonts/style.css');
+
+body {
+  margin: 0;
+  font-family: "Gordita Regular", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*! Timonwa CSS Reset */
+/** give all elements margin and padding of 0 and box-sizing of border box  */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/** body */
+body {
+  overflow-x: hidden;
+}
+
+/** to ensure that when you click on an id link, the nav bar will not cover the beginning of the content the id is pointing to */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+/** reset the link states to the page's main color with no decoration */
+a,
+a:link,
+a:hover,
+a:active,
+a:visited {
+  text-decoration: none;
+}
+
+/** add pointer to inputs */
+input,
+select,
+textarea,
+button,
+optgroup {
+  cursor: pointer;
+}
+
+/** removing the outline when inputs are on focus */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+/** remove the background color of the buttons */
+button {
+  background-color: transparent;
+  border: none;
+}
+
+/** remove italics style from the address text */
+address {
+  font-style: normal;
+}
+
+/** remove bullets from list items and position them well */
+ul {
+  list-style: none;
+  list-style-position: unset;
+}
+

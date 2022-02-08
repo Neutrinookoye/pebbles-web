@@ -1,0 +1,64 @@
+@import "variables";
+
+.review-nav-cntr {
+  padding: $section-padding;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  color: $main-blue;
+  padding-bottom: 20px;
+
+  .note {
+    color: $lightgreen1;
+    position: relative;
+    font-size: 0.6rem;
+    margin-top: 2em;
+    font-family: "Gordita Light", sans-serif;
+  }
+
+  .note::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 15px;
+    height: 1px;
+    background-color: $lightgreen1;
+    left: 22px;
+    top: -5px;
+  }
+  .review-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title {
+    font-family: "Gordita Bold", sans-serif;
+    color: $grey1;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  h2 {
+    font-family: "Gordita Bold", sans-serif;
+    font-size: 1.7em;
+  }
+}
+@media screen and (max-width: 780px) {
+  $section-padding: 20px 50px;
+
+  .review-nav-cntr {
+    padding: $section-padding;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  $section-padding: 20px 30px;
+
+  .review-nav-cntr {
+    padding: $section-padding;
+  }
+}

@@ -1,0 +1,124 @@
+.blue-btn {
+  background-color: #00349a;
+  color: white;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.nav-bar {
+  width: 100%;
+  padding: 20px 70px;
+  background-color: #ffffff;
+  color: #00349a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.nav-bar .nav-bar-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: inherit;
+  position: relative;
+}
+.nav-bar .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /* width: 50%; */
+  font-weight: bold;
+}
+.nav-bar .logo img {
+  /* height: 15px; */
+  /* width: auto; */
+  /* margin-right: 5px; */
+  width: 230px;
+}
+.nav-bar .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /* width: 50%; */
+}
+.nav-bar .nav-links .menu-toggle {
+  margin-left: 50px;
+  font-size: 22px;
+  cursor: pointer;
+}
+.nav-bar .nav-links button.blue-btn {
+  /* font-size: 0.6em; */
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.nav-links {
+  position: relative;
+}
+
+.nav-links .nav__dropdown {
+  position: absolute;
+  top: 70px;
+  /* right: -45px; */
+  z-index: 1;
+}
+
+@media screen and (max-width: 780px) {
+  .nav-bar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .nav-bar .logo {
+    width: 100%;
+  }
+  .nav-bar button {
+    display: none;
+  }
+
+  .nav-bar .logo img {
+    width: 180px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .nav-bar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+@media screen and (max-width: 780px) {
+  .nav-bar {
+    padding: 15px 50px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .nav-bar {
+    padding: 15px 30px;
+  }
+}

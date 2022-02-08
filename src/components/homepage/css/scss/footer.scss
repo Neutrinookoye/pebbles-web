@@ -1,0 +1,150 @@
+@import "variables";
+
+footer {
+  margin-top: 100px;
+  padding: $section-padding;
+  font-size: 0.8em;
+  width: 100%;
+  background-color: $main-blue;
+  color: $white;
+  position: relative;
+
+  a,
+  a:link,
+  a:hover,
+  a:active,
+  a:visited {
+    color: $white;
+  }
+
+  .footer-wrapper::after {
+    content: "";
+    position: absolute;
+    display: block;
+
+    bottom: 100%;
+    left: calc(50% - 100px);
+    border: 100px solid transparent;
+    border-bottom: 50px solid $main-blue;
+  }
+
+  .footer-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .name {
+    width: 25%;
+    padding: 20px 0;
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 50%;
+    padding: 0;
+  }
+
+  .links > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+    padding: 20px 0;
+  }
+  .links > div > a {
+    padding: 5px 0;
+  }
+
+  .followus-icons {
+    margin-right: 10px;
+  }
+
+  .subscribe-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px 0;
+
+    p {
+      font-weight: bold;
+    }
+  }
+
+  form {
+    display: flex;
+    margin-top: 10px;
+
+    .form-input-email {
+      padding: 5px 10px;
+      background-color: $main-blue;
+      border: 2px solid $white;
+      border-radius: 5px 0 0 5px;
+      color: $white;
+    }
+
+    .form-input-email::placeholder {
+      color: $white;
+    }
+
+    .form-input-button {
+      padding: 5px 10px;
+      background-color: $white;
+      border: 2px solid $white;
+      border-radius: 0 5px 5px 0;
+      color: $darkblue3;
+      font-weight: bold;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .footer-wrapper {
+    flex-wrap: wrap;
+
+    .name {
+      width: 50%;
+      order: 1;
+    }
+    .subscribe-card {
+      width: 50%;
+      order: 2;
+    }
+    .links {
+      width: 100%;
+      order: 3;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer-wrapper {
+    flex-direction: column;
+
+    .name {
+      width: 100%;
+    }
+    .subscribe-card {
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 780px) {
+  $section-padding: 20px 50px;
+
+  footer {
+    padding: $section-padding;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  $section-padding: 20px 30px;
+
+  footer {
+    padding: $section-padding;
+  }
+}

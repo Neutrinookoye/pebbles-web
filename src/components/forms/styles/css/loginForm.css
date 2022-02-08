@@ -1,0 +1,251 @@
+/** root file */
+:root {
+  /** variables */
+  --blue: #00349a;
+  --grey1: #333333;
+  --grey3: #828282;
+  --border: 1px solid #828282;
+  --blue2: #21a58f;
+}
+
+a,
+a:link,
+a:hover,
+a:active,
+a:visited {
+  color: var(--blue2);
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+/*! My CSS */
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.486);
+  z-index: 999;
+}
+
+.close-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.goback-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.form-page {
+  background-color: white;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /* height: 100%; */
+  /* margin: 0; */
+  border: var(--border);
+  color: var(--grey1);
+  margin: 50px auto;
+  width: 320px;
+  padding: 20px;
+}
+
+.login-form,
+.login_first_screen {
+  padding: 20px;
+  /* margin-top: 50px; */
+}
+
+.login-form > h1,
+.login_first_screen > h1 {
+  -ms-flex-item-align: self-start;
+  align-self: self-start;
+  margin-bottom: 0.8em;
+  font-family: "Gordita Bold", sans-serif;
+  font-size: 24px;
+}
+
+.login-form > .form-input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.login-form > .form-input-group > .form-input-label {
+  margin-bottom: 5px;
+  color: var(--grey3);
+  font-size: 14px;
+}
+
+.login-form > .form-input-group > .form-input {
+  padding-left: 0;
+  border: none;
+  border-bottom: var(--border);
+  font-size: 18px;
+}
+
+form > .form-input-group > input {
+  font-size: 1em;
+  color: var(--grey1);
+  padding: 5px;
+}
+
+.login-form > .form-input-group > input:active {
+  border: none;
+}
+
+.login-form > .form-input-group.checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.login-form > .form-input-group.checkbox > label {
+  padding-left: 10px;
+  margin-bottom: 0px;
+}
+
+.login-form > .form-input-group > button {
+  background-color: var(--blue);
+  color: #ffffff;
+  font-size: 1.2em;
+  border-radius: 5px;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.login-form > .paragraphs,
+.login_first_screen > .paragraphs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.login-form > .paragraphs > p,
+.login_first_screen > .paragraphs > p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.8em;
+}
+.login-form > .paragraphs > p > a,
+.login_first_screen > .paragraphs > p > a {
+  font-family: "Gordita Bold", sans-serif;
+  color: var(--blue2);
+}
+
+.first__screen__btn {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.host-image-wrapper {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.host-image-wrapper h2 {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 44px;
+  font-feature-settings: "liga" off;
+  color: #333333;
+  font-family: "Gordita Medium";
+}
+
+.host-image-wrapper img {
+  width: 130px;
+  height: 130px;
+}
+
+.first__screen__btn button {
+  border: 1px solid #5c8df0;
+  box-sizing: border-box;
+  background: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.first__screen__btn p {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0.4px;
+  color: #828282;
+  font-family: "Gordita Medium";
+  margin-left: 20px;
+}
+
+.kindly__select {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Gordita Medium";
+  color: #21a58f;
+}
+.checkboxs-wrapper {
+  margin: 20px 0;
+}
+
+.checkbox-container input {
+  border: 1px solid #5c8df0;
+  box-sizing: border-box;
+  background: none;
+  /* border-radius: 30px !important; */
+  width: 40px;
+  height: 40px;
+}

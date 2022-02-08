@@ -1,0 +1,51 @@
+@import "variables";
+
+.subnav-bar {
+  width: 100%;
+  padding: $section-padding;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: $main-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .subnav-bar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: inherit;
+  }
+  .category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 5px;
+  }
+
+  a,
+  a:link,
+  a:hover,
+  a:active,
+  a:visited {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $lightblue;
+  }
+
+  img {
+    height: 1.2em;
+    padding-right: 5px;
+    color: $lightblue;
+  }
+  span {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .subnav-bar {
+    display: none;
+  }
+}

@@ -1,0 +1,150 @@
+/** root file */
+:root {
+  /** variables */
+  --blue: rgba(0, 52, 154, 1);
+  --grey1: rgba(51, 51, 51, 1);
+  --grey3: rgba(130, 130, 130, 1);
+  --border: 1px solid rgba(130, 130, 130);
+}
+
+a,
+a:link,
+a:hover,
+a:active,
+a:visited {
+  color: var(--blue2);
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+/*! My CSS */
+.signup-form-wrapper {
+  background-color: white;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 40px;
+  width: 50%;
+  color: var(--grey1);
+}
+
+.signup-form-wrapper > .signup-form {
+  width: 500px;
+  height: 100%;
+}
+
+.signup-form-wrapper > .signup-form > .heading {
+  margin-bottom: 40px;
+}
+
+.signup-form-wrapper > .signup-form > .heading > h1 {
+  font-family: "Gordita Bold", sans-serif;
+}
+
+.signup-form-wrapper > .signup-form > .heading > h1,
+.signup-form-wrapper > .signup-form > .heading > p {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.signup-form-wrapper > .signup-form > .heading > p {
+  color: var(--grey3);
+}
+
+.signup-form-wrapper > .signup-form > .form-input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.signup-form-wrapper > .signup-form > .form-input-group > .form-input-label {
+  margin-bottom: 10px;
+  color: var(--grey3);
+}
+
+.signup-form-wrapper > .signup-form > .form-input-group > .form-input {
+  margin-bottom: 10px;
+  padding: 10px;
+  padding-left: 0;
+  border: none;
+  border-bottom: var(--border);
+}
+
+.signup-form-wrapper > .signup-form > .form-input-group > input {
+  font-size: 1em;
+  color: var(--grey1);
+}
+
+.signup-form-wrapper > .signup-form > .form-input-group > input:active {
+  border: none;
+}
+
+.signup-form-wrapper > .signup-form > .form-input-group > p {
+  background-color: var(--blue);
+  color: #ffffff;
+  font-size: 1.2em;
+  border-radius: 5px;
+  margin: 40px 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.signup-form-wrapper > .alt-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.signup-form-wrapper > .alt-login > p {
+  padding: 20px 0;
+  margin: 0;
+}
+
+.signup-form-wrapper > .alt-login > p > a {
+  margin: 20px;
+  color: var(--grey1);
+}
+
+.otp {
+  margin: 50px 0;
+}
+
+.signup-form-wrapper > .signup-form > .form-input-group > button {
+  background-color: var(--blue);
+  color: #ffffff;
+  font-size: 1.2em;
+  border-radius: 5px;
+  margin: 40px 0;
+  text-align: center;
+  cursor: pointer;
+}

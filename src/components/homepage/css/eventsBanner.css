@@ -1,0 +1,160 @@
+.events-header-image {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(75, 109, 178, 0.4)), to(rgba(75, 109, 178, 0.4))), url("../img/luxury-apartment.png");
+  background-image: linear-gradient(rgba(75, 109, 178, 0.4), rgba(75, 109, 178, 0.4)), url("../img/luxury-apartment.png");
+}
+
+.events-search-bar {
+  position: absolute;
+  bottom: -40px;
+  left: 50px;
+  right: 50px;
+  -webkit-box-shadow: 0px 3px 3px #888b97;
+          box-shadow: 0px 3px 3px #888b97;
+  border-radius: 0 0 20px 20px;
+  background-color: white;
+  margin: 0 40px;
+}
+.events-search-bar .search-form {
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.events-search-bar .form-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(100% - 50px);
+}
+.events-search-bar .form-input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: calc(100% / 3);
+  background-color: white;
+}
+.events-search-bar .form-input-group .form-input-label {
+  color: #333333;
+  font-weight: bold;
+  font-family: "Gordita Bold", sans-serif;
+}
+.events-search-bar .form-input-group .icon {
+  color: #888b97;
+  margin-right: 10px;
+}
+.events-search-bar .form-input-group .form-input {
+  border: none;
+  color: #888b97;
+  margin-top: 10px;
+  width: 100%;
+}
+.events-search-bar .form-input-group .form-input::-webkit-input-placeholder {
+  border: none;
+  color: #888b97;
+  font-size: 0.8em;
+}
+.events-search-bar .form-input-group .form-input::-moz-placeholder {
+  border: none;
+  color: #888b97;
+  font-size: 0.8em;
+}
+.events-search-bar .form-input-group .form-input:-ms-input-placeholder {
+  border: none;
+  color: #888b97;
+  font-size: 0.8em;
+}
+.events-search-bar .form-input-group .form-input::-ms-input-placeholder {
+  border: none;
+  color: #888b97;
+  font-size: 0.8em;
+}
+.events-search-bar .form-input-group .form-input::placeholder {
+  border: none;
+  color: #888b97;
+  font-size: 0.8em;
+}
+.events-search-bar .search-btn {
+  width: 50px;
+}
+.events-search-bar .search-icon {
+  background-color: #333333;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+}
+
+@media screen and (max-width: 780px) {
+  .events-search-bar .search-form {
+    padding: 10px 30px;
+  }
+  .events-search-bar .form-inputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: calc(100% - 50px);
+  }
+  .events-search-bar .form-input-group {
+    width: calc(100% / 2);
+    margin: 5px 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .events-search-bar {
+    margin: 0 20px;
+    left: 0;
+    right: 0;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    margin: 0 20px;
+    border-radius: 0 0 10px 10px;
+  }
+  .events-search-bar .search-form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 10px;
+  }
+  .events-search-bar .search-form .form-inputs {
+    width: 100%;
+  }
+  .events-search-bar .search-form .form-input-group {
+    width: 50%;
+    padding: 0 10px;
+  }
+  .events-search-bar .search-form .search-btn {
+    width: 250px;
+    padding-top: 10px;
+  }
+  .events-search-bar .search-form .search-icon {
+    width: 250px;
+    border-radius: 5px;
+  }
+}

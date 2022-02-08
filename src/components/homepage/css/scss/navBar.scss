@@ -1,0 +1,88 @@
+@import "variables";
+@import "button";
+
+.nav-bar {
+  width: 100%;
+  padding: $section-padding;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: $white;
+  color: $main-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .nav-bar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    font-weight: bold;
+
+    img {
+      height: 15px;
+      width: auto;
+      margin-right: 5px;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+
+    .menu-toggle {
+      margin-left: 30px;
+    }
+
+    button.blue-btn {
+      font-size: 0.6em;
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .nav-bar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    .logo {
+      width: 100%;
+    }
+
+    button {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .nav-bar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  $section-padding: 15px 50px;
+
+  .nav-bar {
+    padding: $section-padding;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  $section-padding: 15px 30px;
+
+  .nav-bar {
+    padding: $section-padding;
+  }
+}

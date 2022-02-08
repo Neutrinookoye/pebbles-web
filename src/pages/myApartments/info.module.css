@@ -1,0 +1,136 @@
+.wrapper {
+  max-width: 100%;
+  padding: 0 20px;
+  margin: 3rem auto;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.title {
+  font-family: 'Gordita Medium';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 43px;
+}
+
+.star {
+  width: 20px;
+}
+
+.ratings {
+  display: flex;
+  width: 140px;
+  justify-content: space-between;
+  align-items: center;
+  color: #828282;
+  font-family: 'Gordita Regular';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.headingTags {
+  font-family: 'Gordita Regular';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 26px;
+  text-align: center;
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.headingTags li {
+  border: 2px solid #f2f2f2;
+  padding: 2px 10px;
+  color: #828282;
+}
+
+.check {
+  padding: 6px;
+  border-radius: 50%;
+  background-color: blue;
+}
+
+.about {
+  font-family: 'Gordita Regular';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 23px;
+  color: #bdbdbd;
+}
+
+.topButton {
+  font-family: 'Gordita Regular';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  padding: 3px 14px;
+  line-height: 26px;
+  text-align: center;
+  color: #4f4f4f;
+  border: 2px solid #f2f2f2;
+  border-radius: 4px;
+}
+
+.topButton:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-family: 'Gordita Bold';
+    font-style: normal;
+    font-size: 30px;
+    line-height: 43px;
+  }
+
+  .star {
+    width: 30px;
+  }
+
+  .ratings {
+    font-family: 'Gordita Regular';
+    display: flex;
+    width: 250px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 34px;
+  }
+
+  .headingTags {
+    font-family: 'Gordita Regular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    color: #4f4f4f;
+  }
+  .about {
+    font-family: 'Gordita Regular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+    color: #bdbdbd;
+  }
+
+  .topButton {
+    font-family: 'Gordita Regular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    color: #4f4f4f;
+  }
+}

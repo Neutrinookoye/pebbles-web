@@ -1,0 +1,117 @@
+.explore-events {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+.explore-events .post-card {
+  margin: 20px;
+  width: 200px;
+  background-color: white;
+  -webkit-box-shadow: 1px 1px 5px #d4e9fe;
+          box-shadow: 1px 1px 5px #d4e9fe;
+}
+.explore-events .post-image {
+  width: inherit;
+  height: 220px;
+  border-radius: 10px;
+  background-color: #888b97;
+}
+.explore-events .post-image img {
+  width: 100%;
+  height: inherit;
+}
+.explore-events .body {
+  padding: 10px;
+}
+.explore-events .post-title {
+  color: #0e1735;
+  padding-top: 5px;
+}
+.explore-events .price {
+  color: #333333;
+  padding-top: 5px;
+}
+.explore-events .details {
+  width: 100%;
+  font-size: 0.95em;
+}
+.explore-events .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+}
+.explore-events .event-avatar {
+  width: 50px;
+  height: 50px;
+  background-color: #888b97;
+  border-radius: 50%;
+}
+.explore-events .event-details {
+  margin-left: 10px;
+  font-size: 0.9em;
+}
+.explore-events .name {
+  color: #0e1735;
+}
+.explore-events .location {
+  color: #828282;
+  font-size: 0.85em;
+}
+
+@media screen and (max-width: 850px) {
+  .explore-events .post-card {
+    margin: 20px;
+    width: 220px;
+  }
+  .explore-events .post-image {
+    width: inherit;
+    height: 250px;
+  }
+  .explore-events .post-image img {
+    width: 100%;
+    height: inherit;
+  }
+}
+@media screen and (max-width: 650px) {
+  .explore-events .post-card {
+    margin: 20px;
+    width: 250px;
+  }
+  .explore-events .post-image {
+    width: inherit;
+    height: 270px;
+  }
+  .explore-events .post-image img {
+    width: 100%;
+    height: inherit;
+  }
+}
+.events-section {
+  margin: 50px 0;
+  padding: 20px 50px;
+  width: 100%;
+  background-color: white;
+  color: #333333;
+}
+.events-section h2 {
+  padding-bottom: 1em;
+  font-family: "Gordita Bold", sans-serif;
+}
+
+@media screen and (max-width: 500px) {
+  .events-section {
+    margin: 50px 0;
+    padding: 20px;
+  }
+}
