@@ -1,27 +1,27 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { Redirect } from "react-router";
-import SideBar from "../../../components/sideBar/SideBar";
-import "./DashboardLayout.scss";
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { Navigate } from 'react-router'
+import SideBar from '../../../components/sideBar/SideBar'
+import './DashboardLayout.scss'
 
 const DashboardLayout = (props) => {
-  const Auth = useSelector((state) => state.Auth);
+	const userLogin = useSelector((state) => state.userLogin)
 
-  if (!Auth?.isAuthenticated) {
-    return <Redirect to="/" />;
-  }
+	if (!userLogin?.userDetail) {
+		return <Navigate to='/login' />
+	}
 
-  return (
-    <div className='d-flex dashboard'>
-      <div className='side__navigation'>
-        <SideBar />
-      </div>
+	return (
+		<div className='d-flex dashboard'>
+			<div className='side__navigation'>
+				<SideBar />
+			</div>
 
-      <div className='dashboard-right'>
-        <div className='dashboard-components'>{props.children}</div>
-      </div>
-    </div>
-  );
-};
+			<div className='dashboard-right'>
+				<div className='dashboard-components'>{props.children}</div>
+			</div>
+		</div>
+	)
+}
 
-export default DashboardLayout;
+export default DashboardLayout

@@ -1,24 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import "./components/fontawesomeicon/FontAwesomeTcon";
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { Provider } from "react-redux";
-import store from './redux/store'
-import 'react-dates/lib/css/_datepicker.css';
+import App from './App'
+import { Provider } from 'react-redux'
+// import store from './redux/store'
+import configureStore from './redux/store'
+import { PersistGate } from 'redux-persist/integration/react'
+import { persistStore } from 'redux-persist'
+
+import 'react-dates/lib/css/_datepicker.css'
+
+const store = configureStore()
+
+const persistor = persistStore(store)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById("root")
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+	<Provider store={store}>
+		<PersistGate persistor={persistor}>
+			<App />
+		</PersistGate>
+	</Provider>,
+	document.getElementById('root')
+)

@@ -1,20 +1,16 @@
-import React from "react";
-import { withRouter, Route, Switch } from "react-router-dom";
-import DashboardApartmentAdd from "./dashboardAapartmentAdd/DashboardApartmentAdd";
-import DashboardHome from "./dashboardHome/DashboardHome";
-import DashboardProfile from "./dashboardprofile/DashboardProfile";
-import DashboardLayout from "./layout/DashboardLayout";
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { Outlet } from 'react-router-dom'
+import DashboardLayout from './layout/DashboardLayout'
 
 function Dashboard(props) {
-  const {
-    match: { path },
-  } = props;
+	const userLogin = useSelector((state) => state.userLogin)
+	const { userDetail } = userLogin
 
-  console.log(props.match.path);
-
-  return (
-    <DashboardLayout>
-      <Switch>
+	return (
+		<DashboardLayout>
+			<Outlet />
+			{/* <Switch>
         <Route path={`${path}/dashboard/profile`}>
           <DashboardProfile />
         </Route>
@@ -24,9 +20,9 @@ function Dashboard(props) {
         <Route path={`${path}/dashboard`}>
           <DashboardHome />
         </Route>
-      </Switch>
-    </DashboardLayout>
-  );
+      </Switch> */}
+		</DashboardLayout>
+	)
 }
 
-export default withRouter(Dashboard);
+export default Dashboard
