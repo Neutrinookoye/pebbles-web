@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import './styles/css/signUpForm.css'
-import {
-	faFacebook,
-	faGoogle,
-	faApple,
-} from '@fortawesome/free-brands-svg-icons'
+// import {
+// 	faFacebook,
+// 	faGoogle,
+// 	faApple,
+// } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Formik } from 'formik'
 import OtpInput from 'react-otp-input'
@@ -43,7 +43,7 @@ const SignupForm = () => {
 
 	const userLogin = useSelector((state) => state.userLogin)
 	if (userLogin?.userDetail) {
-		navigate('/app/dashboard')
+		navigate('/')
 	}
 
 	return (
@@ -315,7 +315,7 @@ const SignupForm = () => {
 				)}
 			</Formik>
 
-			<div className='alt-login'>
+			{/* <div className='alt-login'>
 				<p>Or via</p>
 				<p>
 					<a href='#/'>
@@ -328,7 +328,7 @@ const SignupForm = () => {
 						<FontAwesomeIcon className='login-icons' icon={faApple} />
 					</a>
 				</p>
-			</div>
+			</div> */}
 		</div>
 	)
 }

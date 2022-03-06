@@ -8,6 +8,9 @@ import { get_user_details } from '../../../redux/actions/userActions'
 function DashboardProfile() {
 	const dispatch = useDispatch()
 
+	const getUserProfile = useSelector((state) => state.getUserProfile)
+	const { loading, userProfile } = getUserProfile
+
 	const [fullName, setFullName] = useState('')
 	const [email, setEmail] = useState('')
 	const [phoneNumber, setPhoneNumber] = useState('')
@@ -18,12 +21,10 @@ function DashboardProfile() {
 	const userLogin = useSelector((state) => state.userLogin)
 	const { userDetail } = userLogin
 
-	const getUserProfile = useSelector((state) => state.getUserProfile)
-	const { loading, userProfile } = getUserProfile
-
 	useEffect(() => {
-		dispatch(get_user_details())
-		if (userProfile) {
+		if (!userProfile || userProfile.user._id != userDetail.userDetails._id) {
+			dispatch(get_user_details())
+		} else {
 			setFullName(userProfile.user.fullName)
 			setEmail(userProfile.user.email)
 			setPhoneNumber(userProfile.user.phoneNumber)
@@ -34,7 +35,7 @@ function DashboardProfile() {
 		//   return () => {
 		//     second
 		//   }
-	}, [dispatch])
+	}, [dispatch, userDetail, userProfile.user._id])
 
 	return (
 		<div className='profile'>

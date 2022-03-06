@@ -1,15 +1,11 @@
 import React, { useState } from 'react'
 import './styles/css/signUpForm.css'
-import {
-	faFacebook,
-	faGoogle,
-	faApple,
-} from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Formik } from 'formik'
 import OtpInput from 'react-otp-input'
 import { useDispatch, useSelector } from 'react-redux'
-// import { getOtp, signUpUsers } from "../../redux/actions/Auth";
+// import { getOtp, signUpUsers } from '../../redux/actions/Auth'
+import { get_otp, user_register } from '../../redux/actions/userActions'
 import { useNavigate } from 'react-router-dom'
 
 const SignupFormBusiness = () => {
@@ -26,9 +22,23 @@ const SignupFormBusiness = () => {
 		setOtp(otp)
 	}
 
-	const Auth = useSelector((state) => state.Auth)
-	if (Auth?.isAuthenticated) {
-		navigate('/app/dashboard')
+	const getOtpHandler = (valuess) => {
+		dispatch(get_otp(valuess))
+	}
+
+	const getSubmitHandler = (val) => {
+		let data = {
+			...val,
+			otp,
+			role: 'BUSINESS',
+			googleSigned: 'true',
+		}
+		dispatch(user_register(data))
+	}
+
+	const userLogin = useSelector((state) => state.userLogin)
+	if (userLogin?.userDetail) {
+		navigate('/')
 	}
 
 	return (
@@ -39,6 +49,10 @@ const SignupFormBusiness = () => {
 					password: '',
 					confirmPassword: '',
 					phoneNumber: '',
+					fullName: '',
+					country: '',
+					state: '',
+					city: '',
 				}}
 				validate={(values) => {
 					const errors = {}
@@ -52,8 +66,20 @@ const SignupFormBusiness = () => {
 					return errors
 				}}
 				onSubmit={(values, { setSubmitting }) => {
-					console.log('values', { ...values, otp, role: 'BUSINESS' })
-					// dispatch(signUpUsers({ ...values, otp, role: 'BUSINESS' }))
+					console.log('values', {
+						...values,
+						otp,
+						role: 'BUSINESS',
+						googleSigned: 'true',
+					})
+					// dispatch(
+					// 	user_register({
+					// 		...values,
+					// 		otp,
+					// 		role: 'USER',
+					// 		googleSigned: 'true',
+					// 	})
+					// )
 					setSubmitting(false)
 				}}
 			>
@@ -71,12 +97,29 @@ const SignupFormBusiness = () => {
 							{showForm && (
 								<>
 									<div className='heading'>
-										<h1>Create Account(Business)</h1>
+										<h1>Create Account (Business)</h1>
 										<p>Enter your account details</p>
 									</div>
 
 									<div className='form-input-group'>
-										<label className='form-input-label' for='email'>
+										<label className='form-input-label' htmlFor='full-name'>
+											Full Name
+										</label>
+										<input
+											className='form-input'
+											type='text'
+											name='fullName'
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.fullName}
+											required
+											placeholder='Enter Fullname'
+										/>
+										{errors.fullName && touched.fullName && errors.fullName}
+									</div>
+
+									<div className='form-input-group'>
+										<label className='form-input-label' htmlFor='email'>
 											Email Address
 										</label>
 										<input
@@ -93,7 +136,7 @@ const SignupFormBusiness = () => {
 									</div>
 
 									<div className='form-input-group'>
-										<label className='form-input-label' for='phone-number'>
+										<label className='form-input-label' htmlFor='phone-number'>
 											Phone Number
 										</label>
 										<input
@@ -105,11 +148,61 @@ const SignupFormBusiness = () => {
 											value={values.phoneNumber}
 											required
 											placeholder='08092134560'
-											required
 										/>
 										{errors.phoneNumber &&
 											touched.phoneNumber &&
 											errors.phoneNumber}
+									</div>
+
+									<div className='form-input-group'>
+										<label className='form-input-label' htmlFor='country'>
+											Country
+										</label>
+										<input
+											className='form-input'
+											type='text'
+											name='country'
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.country}
+											required
+											placeholder='Country of Residence'
+										/>
+										{errors.country && touched.country && errors.country}
+									</div>
+
+									<div className='form-input-group'>
+										<label className='form-input-label' htmlFor='state'>
+											State
+										</label>
+										<input
+											className='form-input'
+											type='text'
+											name='state'
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.state}
+											required
+											placeholder='State of Residence'
+										/>
+										{errors.state && touched.state && errors.state}
+									</div>
+
+									<div className='form-input-group'>
+										<label className='form-input-label' htmlFor='city'>
+											City
+										</label>
+										<input
+											className='form-input'
+											type='text'
+											name='city'
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.city}
+											required
+											placeholder='City of Residence'
+										/>
+										{errors.city && touched.city && errors.city}
 									</div>
 
 									<div className='form-input-group'>
@@ -150,7 +243,7 @@ const SignupFormBusiness = () => {
 												setShowForm(false)
 												setShowOtpForm(true)
 												console.log(values.email)
-												// dispatch(getOtp(values))
+												getOtpHandler(values)
 											}}
 										>
 											Submit
@@ -164,14 +257,13 @@ const SignupFormBusiness = () => {
 										<h1>Confirm number</h1>
 										<p>
 											Enter the code sent via sms to{' '}
-											<span className='user-number'>+234 888 777 888</span>
+											<span className='user-number'> {values.email} </span>
 										</p>
 									</div>
 
 									<div className='otp'>
 										<OtpInput
 											onChange={handleOtp}
-											// onBlur={handleBlur}
 											value={otp}
 											numInputs={6}
 											separator={
@@ -191,13 +283,25 @@ const SignupFormBusiness = () => {
 									</div>
 
 									<div className='form-input-group'>
-										<button
+										{/* <button
 											className='form-input'
 											type='submit'
 											disabled={isSubmitting}
+											
 										>
 											Submit
-										</button>
+										</button> */}
+										<p
+											className='form-input'
+											onClick={() => {
+												setShowForm(false)
+												setShowOtpForm(true)
+												console.log(values.email)
+												getSubmitHandler(values)
+											}}
+										>
+											Submit
+										</p>
 									</div>
 								</>
 							)}
@@ -205,21 +309,6 @@ const SignupFormBusiness = () => {
 					</>
 				)}
 			</Formik>
-
-			<div className='alt-login'>
-				<p>Or via</p>
-				<p>
-					<a href='#/'>
-						<FontAwesomeIcon className='login-icons' icon={faFacebook} />
-					</a>
-					<a href='#/'>
-						<FontAwesomeIcon className='login-icons' icon={faGoogle} />
-					</a>
-					<a href='#/'>
-						<FontAwesomeIcon className='login-icons' icon={faApple} />
-					</a>
-				</p>
-			</div>
 		</div>
 	)
 }

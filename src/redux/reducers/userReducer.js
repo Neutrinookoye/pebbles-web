@@ -45,14 +45,21 @@ export const userLoginReducer = (state = {}, action) => {
 	}
 }
 
-export const getUserProfileReducer = (state = {}, action) => {
+export const getUserProfileReducer = (
+	state = { userProfile: { user: {} } },
+	action
+) => {
 	switch (action.type) {
 		case types.GET_USER_PROFILE_REQUEST:
-			return { ...state, loading: true }
+			return { ...state, loading: true, userProfile: { user: {} } }
 		case types.GET_USER_PROFILE_SUCCESS:
 			return { loading: false, userProfile: action.payload }
 		case types.GET_USER_PROFILE_FAIL:
-			return { loading: false, error: action.payload }
+			return {
+				loading: false,
+				error: action.payload,
+				userProfile: { user: {} },
+			}
 		case types.GET_USER_PROFILE_RESET:
 			return {}
 		default:

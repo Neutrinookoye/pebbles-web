@@ -1,19 +1,13 @@
 import React, { useState } from 'react'
 import './styles/css/signUpForm.css'
-import {
-	faFacebook,
-	faGoogle,
-	faApple,
-} from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Formik } from 'formik'
 import OtpInput from 'react-otp-input'
 import { useDispatch, useSelector } from 'react-redux'
-// import { getOtp, signUpUsers } from '../../redux/actions/Auth'
 import { get_otp, user_register } from '../../redux/actions/userActions'
 import { useNavigate } from 'react-router-dom'
 
-const SignupForm = () => {
+const SignupFormIndividual = () => {
 	const dispatch = useDispatch()
 
 	let navigate = useNavigate()
@@ -35,7 +29,7 @@ const SignupForm = () => {
 		let data = {
 			...val,
 			otp,
-			role: 'USER',
+			role: 'INDIVIDUAL',
 			googleSigned: 'true',
 		}
 		dispatch(user_register(data))
@@ -43,7 +37,7 @@ const SignupForm = () => {
 
 	const userLogin = useSelector((state) => state.userLogin)
 	if (userLogin?.userDetail) {
-		navigate('/app/dashboard')
+		navigate('/')
 	}
 
 	return (
@@ -314,23 +308,8 @@ const SignupForm = () => {
 					</>
 				)}
 			</Formik>
-
-			<div className='alt-login'>
-				<p>Or via</p>
-				<p>
-					<a href='#/'>
-						<FontAwesomeIcon className='login-icons' icon={faFacebook} />
-					</a>
-					<a href='#/'>
-						<FontAwesomeIcon className='login-icons' icon={faGoogle} />
-					</a>
-					<a href='#/'>
-						<FontAwesomeIcon className='login-icons' icon={faApple} />
-					</a>
-				</p>
-			</div>
 		</div>
 	)
 }
 
-export default SignupForm
+export default SignupFormIndividual
