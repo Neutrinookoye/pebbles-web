@@ -15,7 +15,7 @@ function Index(props) {
           <DashboardProfile />
         </Route>
         <Route path={`${path}/apartment/add`}>
-          <DashboardApartmentAdd />
+          <DashboardApartmentAdd />X`
         </Route>
         <Route path={`${path}/dashboard`}>
           <DashboardHome />
