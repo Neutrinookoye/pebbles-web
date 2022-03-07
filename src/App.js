@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Preloader from './components/Preloader'
-import Dashboard from './pages/dashboard/Index'
+import Index from './pages/dashboard/Index'
 import DashboardApartmentAdd from './pages/dashboard/dashboardAapartmentAdd/DashboardApartmentAdd'
 import DashboardHome from './pages/dashboard/dashboardHome/DashboardHome'
 import DashboardProfile from './pages/dashboard/dashboardprofile/DashboardProfile'
@@ -55,7 +55,7 @@ function App() {
 							path='/app'
 							element={<Navigate replace to='/app/dashboard/' />}
 						/>
-						<Route path='/app' element={<Dashboard />}>
+						<Route path='/app' element={<Index />}>
 							<Route
 								path={`dashboard/profile`}
 								element={<DashboardProfile />}

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { Outlet } from 'react-router-dom'
 import DashboardLayout from './layout/DashboardLayout'
 
-function Dashboard(props) {
+function Index(props) {
 	const userLogin = useSelector((state) => state.userLogin)
 	const { userDetail } = userLogin
 
@@ -25,4 +25,4 @@ function Dashboard(props) {
 	)
 }
 
-export default Dashboard
+export default Index
