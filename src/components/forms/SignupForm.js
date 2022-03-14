@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './styles/css/signUpForm.css'
 // import {
 // 	faFacebook,
@@ -41,10 +41,14 @@ const SignupForm = () => {
 		dispatch(user_register(data))
 	}
 
-	const userLogin = useSelector((state) => state.userLogin)
-	if (userLogin?.userDetail) {
-		navigate('/')
-	}
+	const userRegister = useSelector((state) => state.userRegister)
+	const { userDetail } = userRegister
+
+	useEffect(() => {
+		if (userDetail) {
+			navigate('/login')
+		}
+	}, [userDetail])
 
 	return (
 		<div className='signup-form-wrapper form'>

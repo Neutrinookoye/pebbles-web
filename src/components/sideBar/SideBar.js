@@ -13,7 +13,7 @@ const SideBar = () => {
 			<ul className='sidebarlist '>
 				<li>
 					<NavLink
-						to='/app/dashboard'
+						to='/dashboard/home'
 						exact
 						className='sidebaritem'
 						activeClassName='active'
@@ -59,7 +59,7 @@ const SideBar = () => {
 				</li>
 				<li>
 					<NavLink
-						to='/app/dashboard/profile'
+						to='/dashboard/profile'
 						exact
 						className='sidebaritem'
 						activeClassName='active'
@@ -96,7 +96,7 @@ const SideBar = () => {
 				</li>
 				<li>
 					<NavLink
-						to='/app/dashboard/profile/c/#'
+						to='/dashboard/bookings'
 						exact
 						className='sidebaritem'
 						activeClassName='active'
@@ -121,7 +121,7 @@ const SideBar = () => {
 				</li>
 				<li>
 					<NavLink
-						to='/app/dashboard/profile/b/#'
+						to='/dashboard/saved-apartments'
 						exact
 						className='sidebaritem'
 						activeClassName='active'
@@ -164,7 +164,7 @@ const SideBar = () => {
 				</li>
 				<li>
 					<NavLink
-						to='/app/dashboard/profile/a/#'
+						to='/dashboard/notifications'
 						exact
 						className='sidebaritem'
 						activeClassName='active'
@@ -196,7 +196,7 @@ const SideBar = () => {
 				</li>
 				<li>
 					<NavLink
-						to='/app/apartment/add'
+						to='/dashboard/apartment/add'
 						exact
 						className='sidebaritem'
 						activeClassName='active'

@@ -23,6 +23,7 @@ import MyApartment from './pages/myApartments/MyApartment'
 import MyApartmentInfo from './pages/myApartments/MyApartmentInfo'
 import SignupIndividual from './pages/auth/SignupIndividual'
 import SignupBusiness from './pages/auth/SignupBusiness'
+import SavedApartments from './pages/dashboard/dashboardSavedApartments/SavedApartments'
 // import DashboardHome from "./pages/dashboard/dashboardHome/DashboardHome";
 
 function App() {
@@ -52,19 +53,17 @@ function App() {
 						<Route exact path='/explore-events' element={<ExploreEvents />} />
 						<Route exact path='/events-info' element={<EventsInfo />} />
 						<Route
-							path='/app'
-							element={<Navigate replace to='/app/dashboard/' />}
+							path='/dashboard'
+							element={<Navigate replace to='/dashboard/home' />}
 						/>
-						<Route path='/app' element={<Index />}>
-							<Route
-								path={`dashboard/profile`}
-								element={<DashboardProfile />}
-							/>
+						<Route path='/dashboard' element={<Index />}>
+							<Route path={`profile`} element={<DashboardProfile />} />
 							<Route
 								path={`apartment/add`}
 								element={<DashboardApartmentAdd />}
 							/>
-							<Route path={`dashboard`} element={<DashboardHome />} />
+							<Route path={`saved-apartments`} element={<SavedApartments />} />
+							<Route path={`home`} element={<DashboardHome />} />
 						</Route>
 						<Route
 							exact

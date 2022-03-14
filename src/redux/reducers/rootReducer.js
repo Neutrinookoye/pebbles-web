@@ -1,6 +1,9 @@
 import { combineReducers } from 'redux'
+import {
+	createApartmentReducer,
+	getUserApartmentReducer,
+} from './apartmentReducer'
 
-import { authReducer } from './authReducer'
 import {
 	userRegisterReducer,
 	userLoginReducer,
@@ -8,11 +11,12 @@ import {
 } from './userReducer'
 
 const reducer = combineReducers({
-	auth: authReducer,
-
 	userRegister: userRegisterReducer,
 	userLogin: userLoginReducer,
 	getUserProfile: getUserProfileReducer,
+
+	createApartment: createApartmentReducer,
+	getUserApartment: getUserApartmentReducer,
 })
 
 export default reducer

@@ -1,151 +1,150 @@
-.profile{
-    &__form{
-        padding: 30px 16px;
-        max-width: 954px;
-        width: 100%;
-        
-        &-group{
-            border: 2px solid #D4E9FE;
-            border-radius: 8px;
-            margin-bottom: 32px;
-            padding: 1px;
-            &:focus-within{
-                border: 2px solid #00349A;
-            }
-        }
-        &-label{
-            display: block;
-            padding: 9px 30px;
-            font-size: 16px;
-            color: #828282;
-        }
-        &-input{
-            padding: 9px 30px;
-            border: none;
-            font-size: 16px;
-            color: #333333;
-            width: 100%;
-        }
-        &-file{
-            padding: 9px 30px;
-            display: flex;
-            justify-content: space-between;
-            label{
-                color: #00349A;
-                font-size: 16px;
-                cursor: pointer;
-            }
-            input{
-                display: none;
-            }
-        }
-    
-    }
-    &__flex{
-        display: flex;
-        justify-content: space-between;
-        gap:10px;
-        .profile__form-group.profile__smaller{
-            width: 266px;
-            @media (max-width:793px){
-                width: 100%;
-            }
-        }
-        .profile__form-group.profile__longer{
-            width: 594px;
-            @media (max-width:793px){
-                width: 100%;
-            }
-        }
-        .profile__form-group{
-            width: 400px;
-            @media (max-width:793px){
-                width: 100%;
-            }
-        }
-        @media (max-width:793px){
-            display: block;
-        }
-    }
-    &__button{
-        background: #00349A;
-        border-radius: 4px;
-        color: #fff;
-        max-width: 345px;
-        margin: 200px auto 20px;
-        display: block;
-        width: 100%;
-        padding-top:12px ;
-        padding-bottom:12px ;
-        font-size: 20px;
-        color: #fff;
-        border: 2px solid transparent; 
-        transition: all .3s ease-in;
-        &:hover{
-            background: #fff;
-            color: #00349A;
-            border: 2px solid #00349A; 
-        }
-    }
+.profile {
+	&__form {
+		padding: 30px 16px;
+		max-width: 954px;
+		width: 100%;
+
+		&-group {
+			border: 2px solid #d4e9fe;
+			border-radius: 8px;
+			margin-bottom: 32px;
+			padding: 1px;
+			&:focus-within {
+				border: 2px solid #00349a;
+			}
+		}
+		&-label {
+			display: block;
+			padding: 9px 30px;
+			font-size: 16px;
+			color: #828282;
+		}
+		&-input {
+			padding: 9px 30px;
+			border: none;
+			font-size: 16px;
+			color: #333333;
+			width: 100%;
+		}
+		&-file {
+			padding: 9px 30px;
+			display: flex;
+			justify-content: space-between;
+			label {
+				color: #00349a;
+				font-size: 16px;
+				cursor: pointer;
+			}
+			input {
+				display: none;
+			}
+		}
+	}
+	&__flex {
+		display: flex;
+		justify-content: space-between;
+		gap: 10px;
+		.profile__form-group.profile__smaller {
+			width: 266px;
+			@media (max-width: 793px) {
+				width: 100%;
+			}
+		}
+		.profile__form-group.profile__longer {
+			width: 594px;
+			@media (max-width: 793px) {
+				width: 100%;
+			}
+		}
+		.profile__form-group {
+			width: 400px;
+			@media (max-width: 793px) {
+				width: 100%;
+			}
+		}
+		@media (max-width: 793px) {
+			display: block;
+		}
+	}
+	&__button {
+		background: #00349a;
+		border-radius: 4px;
+		color: #fff;
+		max-width: 345px;
+		margin: 200px auto 20px;
+		display: block;
+		width: 100%;
+		padding-top: 12px;
+		padding-bottom: 12px;
+		font-size: 20px;
+		color: #fff;
+		border: 2px solid transparent;
+		transition: all 0.3s ease-in;
+		&:hover {
+			background: #fff;
+			color: #00349a;
+			border: 2px solid #00349a;
+		}
+	}
 }
 
-.facilities{
-    margin-top: 30px;
-    &__text{
-        color: #21A58F;
-        font-size: 16px;
-        margin-bottom: 40px;
-        max-width: 417px;
-    }
-    &__checkboxes{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 32px;
-    }
-    &__label{
-        display: flex;
-        align-items: center;
-    }
-    &__check{
-        display: none;
-    }
-    &__check:checked ~ &__psuedobox svg{
-        opacity: 0;
-        transition: opacity .1s linear;
-    }
-    &__psuedobox{
-        height: 74px;
-        width: 74px;
-        border-radius: 8px;
-        border: 2px solid #D4E9FE;
-        display: grid;
-        place-items: center;
-        margin-right: 40px;
-    }
-    &__labeltext{
-        color: #828282;
-        font-weight: 500;
-        font-size: 16px;
-    }
-    &__more{
-        width: 100%;
-        border: 2px solid #D4E9FE;
-        height: 74px;
-        line-height: 100px;
-        padding: 0px 13px;
-        font-size: 16px;
-        &::placeholder{
-            color: #BEC2C8;
-        }
-    }
-    &__images{
-        margin-top: 64px;
-    }
-    &__images-text{
-        color: #828282;
-        margin-bottom: 16px;
-    }
-    &__button{
-        margin-top: 60px;
-    }
+.facilities {
+	margin-top: 30px;
+	&__text {
+		color: #21a58f;
+		font-size: 16px;
+		margin-bottom: 40px;
+		max-width: 417px;
+	}
+	&__checkboxes {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 32px;
+	}
+	&__label {
+		display: flex;
+		align-items: center;
+	}
+	// &__check {
+	// 	display: none;
+	// }
+	// &__check:checked ~ &__psuedobox svg {
+	// 	opacity: 0;
+	// 	transition: opacity 0.1s linear;
+	// }
+	// &__psuedobox {
+	// 	height: 74px;
+	// 	width: 74px;
+	// 	border-radius: 8px;
+	// 	border: 2px solid #d4e9fe;
+	// 	display: grid;
+	// 	place-items: center;
+	// 	margin-right: 40px;
+	// }
+	&__labeltext {
+		color: #828282;
+		font-weight: 500;
+		font-size: 16px;
+	}
+	&__more {
+		width: 100%;
+		border: 2px solid #d4e9fe;
+		height: 74px;
+		line-height: 100px;
+		padding: 0px 13px;
+		font-size: 16px;
+		&::placeholder {
+			color: #bec2c8;
+		}
+	}
+	&__images {
+		margin-top: 64px;
+	}
+	&__images-text {
+		color: #828282;
+		margin-bottom: 16px;
+	}
+	&__button {
+		margin-top: 60px;
+	}
 }

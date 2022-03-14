@@ -29,9 +29,14 @@ const NavBar = ({ openLoginModal }) => {
 				</div>
 
 				<div className='nav-links'>
-					<Link to='/become-host'>
-						<Button text='Become a Host'></Button>
-					</Link>
+					{!userDetail && (
+						<Link to='/become-host'>
+							<Button text='Become a Host'></Button>
+						</Link>
+					)}
+					{userDetail && (
+						<span>Welcome, {userDetail.userDetails.fullName} </span>
+					)}
 					<FontAwesomeIcon
 						onClick={() => setDropdown(!dropdown)}
 						className='menu-toggle'

@@ -31,7 +31,7 @@ const NavbarDropdown = ({ toggleDropdown, openLoginModal }) => {
 				</li>
 				{userDetail && (
 					<li>
-						<Link onClick={() => toggleDropdown()} to='/app/dashboard'>
+						<Link onClick={() => toggleDropdown()} to='/dashboard'>
 							My Dashboard
 						</Link>
 					</li>

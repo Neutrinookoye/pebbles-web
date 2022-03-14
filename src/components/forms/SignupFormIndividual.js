@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './styles/css/signUpForm.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Formik } from 'formik'
@@ -35,10 +35,14 @@ const SignupFormIndividual = () => {
 		dispatch(user_register(data))
 	}
 
-	const userLogin = useSelector((state) => state.userLogin)
-	if (userLogin?.userDetail) {
-		navigate('/')
-	}
+	const userRegister = useSelector((state) => state.userRegister)
+	const { userDetail } = userRegister
+
+	useEffect(() => {
+		if (userDetail) {
+			navigate('/login')
+		}
+	}, [userDetail])
 
 	return (
 		<div className='signup-form-wrapper form'>
