@@ -7,6 +7,9 @@ import { MultiSelect } from 'react-multi-select-component'
 function DashboardApartmentAdd() {
 	const dispatch = useDispatch()
 
+	const createApartment = useSelector((state) => state.createApartment)
+	const { loading } = createApartment
+
 	const [apartmentName, setApartmentName] = React.useState('')
 	const [address, setAddress] = React.useState('')
 	const [apartmentCountry, setApartmentCountry] = React.useState('')
@@ -409,7 +412,11 @@ function DashboardApartmentAdd() {
 						type='submit'
 						onClick={submitHandler}
 					>
-						Register
+						{loading ? (
+							<i className='fas fa-spinner fa-spin'></i>
+						) : (
+							<span>Register</span>
+						)}
 					</button>
 				</form>
 			</div>
