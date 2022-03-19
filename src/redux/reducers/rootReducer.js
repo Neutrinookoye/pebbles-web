@@ -1,8 +1,13 @@
 import { combineReducers } from 'redux'
 import {
 	createApartmentReducer,
+	getApartmentDetailsReducer,
 	getUserApartmentReducer,
 } from './apartmentReducer'
+import {
+	createBookingReducer,
+	getBookedApartmentReducer,
+} from './bookingReducer'
 
 import {
 	userRegisterReducer,
@@ -17,6 +22,10 @@ const reducer = combineReducers({
 
 	createApartment: createApartmentReducer,
 	getUserApartment: getUserApartmentReducer,
+	getApartmentDetails: getApartmentDetailsReducer,
+
+	createBooking: createBookingReducer,
+	getBookedApartment: getBookedApartmentReducer,
 })
 
 export default reducer

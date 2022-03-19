@@ -36,22 +36,26 @@ const NavbarDropdown = ({ toggleDropdown, openLoginModal }) => {
 						</Link>
 					</li>
 				)}
-				<li>
-					<Link
-						onClick={() => {
-							openLoginModal()
-							toggleDropdown()
-						}}
-						to='#/'
-					>
-						Login
-					</Link>
-				</li>
-				<li>
-					<Link onClick={() => toggleDropdown()} to='/signup'>
-						Sign Up
-					</Link>
-				</li>
+				{!userDetail && (
+					<>
+						<li>
+							<Link
+								onClick={() => {
+									openLoginModal()
+									toggleDropdown()
+								}}
+								to='#/'
+							>
+								Login
+							</Link>
+						</li>
+						<li>
+							<Link onClick={() => toggleDropdown()} to='/signup'>
+								Sign Up
+							</Link>
+						</li>
+					</>
+				)}
 				<li>
 					<Link onClick={() => toggleDropdown()} to='/'>
 						Contact us

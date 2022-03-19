@@ -27,3 +27,25 @@ export const getUserApartmentReducer = (state = {}, action) => {
 			return state
 	}
 }
+
+export const getApartmentDetailsReducer = (
+	state = { apartmentDetails: {} },
+	action
+) => {
+	switch (action.type) {
+		case types.GET_APARTMENT_DETAILS_REQUEST:
+			return { ...state, loading: true, apartmentDetails: {} }
+		case types.GET_APARTMENT_DETAILS_SUCCESS:
+			return { loading: false, apartmentDetails: action.payload }
+		case types.GET_APARTMENT_DETAILS_FAIL:
+			return {
+				loading: false,
+				error: action.payload,
+				apartmentDetails: {},
+			}
+		case types.GET_APARTMENT_DETAILS_RESET:
+			return {}
+		default:
+			return state
+	}
+}

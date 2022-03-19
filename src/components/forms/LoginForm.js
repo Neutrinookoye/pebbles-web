@@ -26,7 +26,7 @@ const LoginForm = ({ openLoginModal }) => {
 	const [isLoading, setIsLoading] = useState(false)
 
 	if (userDetail?.userDetails) {
-		navigate('/app/dashboard')
+		navigate('/dashboard')
 	}
 
 	return (

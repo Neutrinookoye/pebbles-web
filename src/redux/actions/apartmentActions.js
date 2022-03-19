@@ -69,6 +69,35 @@ export const get_user_apartment = () => async (dispatch, getState) => {
 			dispatch(user_logout())
 		}
 		dispatch({ type: types.GET_USER_APARTMENTS_FAIL, payload: message })
+	}
+}
+
+export const get_apartment_details = (id) => async (dispatch, getState) => {
+	try {
+		dispatch({ type: types.GET_APARTMENT_DETAILS_REQUEST })
+
+		const {
+			userLogin: { userDetail },
+		} = getState()
+
+		const { data } = await axios.get(`${url}/apartments/${id}`, {
+			headers: authHeader(userDetail.token),
+		})
+
+		if (data.message === 'success') {
+			dispatch({
+				type: types.GET_APARTMENT_DETAILS_SUCCESS,
+				payload: data.data,
+			})
+		}
+	} catch (error) {
+		const message = error.response
+			? error.response.data.message
+			: 'Something went wrong'
+		if (message === 'Not Authorized') {
+			dispatch(user_logout())
+		}
+		dispatch({ type: types.GET_APARTMENT_DETAILS_FAIL, payload: message })
 		toast.error(message, { position: 'top-right' })
 	}
 }

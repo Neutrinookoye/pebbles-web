@@ -24,6 +24,7 @@ import MyApartmentInfo from './pages/myApartments/MyApartmentInfo'
 import SignupIndividual from './pages/auth/SignupIndividual'
 import SignupBusiness from './pages/auth/SignupBusiness'
 import SavedApartments from './pages/dashboard/dashboardSavedApartments/SavedApartments'
+import BookedApartments from './pages/dashboard/dashboardBookedApartments/BookedApartments'
 // import DashboardHome from "./pages/dashboard/dashboardHome/DashboardHome";
 
 function App() {
@@ -63,6 +64,7 @@ function App() {
 								element={<DashboardApartmentAdd />}
 							/>
 							<Route path={`saved-apartments`} element={<SavedApartments />} />
+							<Route path={`bookings`} element={<BookedApartments />} />
 							<Route path={`home`} element={<DashboardHome />} />
 						</Route>
 						<Route

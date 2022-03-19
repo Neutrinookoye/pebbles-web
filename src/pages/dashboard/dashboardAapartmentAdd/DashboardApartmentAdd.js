@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import AdminHeader from '../../../components/AdminHeader/AdminHeader'
 import { useSelector, useDispatch } from 'react-redux'
-import { create_apartment } from '../../../redux/actions/apartmentAction'
+import { create_apartment } from '../../../redux/actions/apartmentActions'
 import { MultiSelect } from 'react-multi-select-component'
 
 function DashboardApartmentAdd() {

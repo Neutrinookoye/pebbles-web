@@ -1,0 +1,64 @@
+.saved_apa_cont {
+	background-color: #fff;
+	border: 1px solid #dfe0eb;
+	box-sizing: border-box;
+	border-radius: 8px;
+	padding: 1rem 0.7rem 1rem 1.7rem;
+}
+
+.saved_apartments {
+	padding: 0.9rem 1.5rem 0.7rem 1.5rem;
+	// background: rgba(247, 247, 247, 0.5);
+	background-color: #fff;
+	border-radius: 4px;
+	border: 1px solid #dfe0eb;
+	box-sizing: border-box;
+	box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
+
+	img {
+		width: 100%;
+		border-radius: 4px;
+	}
+
+	.black_dot {
+		height: 4px;
+		width: 4px;
+		border-radius: 50%;
+		background-color: #000;
+		display: inline-block;
+		margin: 0.7rem 0.5rem 0.1rem 0.5rem;
+	}
+
+	&_row {
+		background: rgba(247, 247, 247, 0.5);
+		border-radius: 4px;
+		padding: 1rem;
+		margin-bottom: 0.7rem;
+	}
+
+	&_name {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 32px;
+		color: #a4a6b3;
+	}
+
+	&_stat {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 20px;
+		color: #21a58f;
+	}
+}
+
+.flex_dir_col {
+	min-height: 10rem;
+}
+
+@media (max-width: 992px) {
+	.flex_dir_col {
+		min-height: 7rem;
+	}
+}

@@ -5,7 +5,7 @@ import Button from '../homepage/Button'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import logo from '../../img/Logo-new.svg'
+import logo from '../../img/pebb_icon_text.svg'
 import { Link } from 'react-router-dom'
 import NavbarDropdown from '../navbarDropdown/NavbarDropdown'
 
