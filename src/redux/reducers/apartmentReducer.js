@@ -49,3 +49,31 @@ export const getApartmentDetailsReducer = (
 			return state
 	}
 }
+
+export const searchApartmentReducer = (state = {}, action) => {
+	switch (action.type) {
+		case types.SEARCH_APARTMENTS_REQUEST:
+			return { loading: true }
+		case types.SEARCH_APARTMENTS_SUCCESS:
+			return { loading: false, apartSearchs: action.payload }
+		case types.SEARCH_APARTMENTS_FAIL:
+			return { loading: false, error: action.payload }
+		case types.SEARCH_APARTMENTS_RESET:
+			return {}
+		default:
+			return state
+	}
+}
+
+export const updateApartmentDetailReducer = (state = {}, action) => {
+	switch (action.type) {
+		case types.UPDATE_APARTMENT_DETAILS_REQUEST:
+			return { loading: true }
+		case types.UPDATE_APARTMENT_DETAILS_SUCCESS:
+			return { loading: false, apartment: action.payload }
+		case types.UPDATE_APARTMENT_DETAILS_FAIL:
+			return { loading: false, error: action.payload }
+		default:
+			return state
+	}
+}

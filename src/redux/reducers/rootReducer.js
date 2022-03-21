@@ -3,6 +3,8 @@ import {
 	createApartmentReducer,
 	getApartmentDetailsReducer,
 	getUserApartmentReducer,
+	searchApartmentReducer,
+	updateApartmentDetailReducer,
 } from './apartmentReducer'
 import {
 	createBookingReducer,
@@ -23,6 +25,8 @@ const reducer = combineReducers({
 	createApartment: createApartmentReducer,
 	getUserApartment: getUserApartmentReducer,
 	getApartmentDetails: getApartmentDetailsReducer,
+	searchApartment: searchApartmentReducer,
+	updateApartmentDetail: updateApartmentDetailReducer,
 
 	createBooking: createBookingReducer,
 	getBookedApartment: getBookedApartmentReducer,
