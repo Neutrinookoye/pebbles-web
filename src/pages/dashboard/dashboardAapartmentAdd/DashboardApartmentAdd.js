@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+// import Dropzone from 'react-dropzone'
+import { useDropzone } from 'react-dropzone'
+import axios from 'axios'
 import AdminHeader from '../../../components/AdminHeader/AdminHeader'
 import { useSelector, useDispatch } from 'react-redux'
 import { create_apartment } from '../../../redux/actions/apartmentActions'
@@ -6,6 +9,7 @@ import { MultiSelect } from 'react-multi-select-component'
 
 function DashboardApartmentAdd() {
 	const dispatch = useDispatch()
+	let i = 0
 
 	const createApartment = useSelector((state) => state.createApartment)
 	const { loading } = createApartment
@@ -18,6 +22,9 @@ function DashboardApartmentAdd() {
 	const [price, setPrice] = React.useState(0)
 	const [facilities, setFacilities] = React.useState([])
 	const [apartmentImages, setApartmentImages] = React.useState([])
+	const [fileLength, setFileLength] = React.useState('')
+	const [urlList, setUrlList] = React.useState([])
+
 	const [apartmentInfo, setApartmentInfo] = React.useState('')
 	const [numberOfRooms, setNumberOfRooms] = React.useState('')
 	const [numberOfToilets, setNumberOfToilets] = React.useState('')
@@ -28,7 +35,7 @@ function DashboardApartmentAdd() {
 	const [uploading, setUploading] = useState(false)
 	const [imageFile, setImageFile] = useState('')
 	const [imageFormat, setImageFormat] = useState('')
-	const [mainImage, setMainImage] = useState(null)
+	const [mainImage, setMainImage] = useState([])
 	const [uploadedImage, setUploadedImage] = useState('')
 
 	const getBase64 = (file) => {
@@ -44,50 +51,60 @@ function DashboardApartmentAdd() {
 		})
 	}
 
-	const handleFileInputChange = (e) => {
-		let file = e.target.files[0]
-		setMainImage(file)
-		getBase64(file)
-			.then((result) => {
-				file['base64'] = result
-				console.log('File Is', file)
-				let split = file.base64.split(',')
-				setImageFile(split[1])
-				let type = file.type.split('/')
-				setImageFormat(type[1])
-			})
-			.catch((err) => {
-				console.log(err)
-			})
+	const handleFileInputChange = async (e) => {
+		let file = e.target.files
+		setFileLength(file.length)
+		mainImage.push(...file)
+		console.log(mainImage)
+		for (let i = 0; i < file.length; i++) {
+			getBase64(file[i])
+				.then((result) => {
+					file[i]['base64'] = result
+					console.log('File Is', file)
+					let split = file[i].base64.split(',')
+					setImageFile(split[1])
+					console.log(imageFile)
+					let type = file[i].type.split('/')
+					setImageFormat(type[1])
+				})
+				.catch((err) => {
+					console.log(err)
+				})
+		}
+		await uploadFileHandler(e)
 	}
 
 	const uploadFileHandler = (e) => {
 		e.preventDefault()
 		const data = new FormData()
-		data.append('file', mainImage)
-		data.append('image', mainImage)
-		data.append('upload_preset', 'pebbles')
-		data.append('cloud_name', 'pebbles-signature')
+		mainImage.map((main) => {
+			data.append('file', main)
+			// data.append('image', main)
+			data.append('upload_preset', 'pebbles')
+			data.append('cloud_name', 'pebbles-signature')
 
-		setUploading(true)
+			setUploading(true)
 
-		fetch('https://api.cloudinary.com/v1_1/pebbles-signature/image/upload', {
-			method: 'post',
-			body: data,
+			fetch('https://api.cloudinary.com/v1_1/pebbles-signature/image/upload', {
+				method: 'post',
+				body: data,
+			})
+				.then((resp) => resp.json())
+				.then((data) => {
+					setUploading(false)
+					// setMainImage(null)
+					setUploadedImage(data.url)
+					urlList.push(data.url)
+					console.log(urlList)
+					setImageFile('')
+				})
+				.catch((err) => {
+					console.log(err)
+					setUploading(false)
+					// setMainImage(null)
+					setImageFile('')
+				})
 		})
-			.then((resp) => resp.json())
-			.then((data) => {
-				setUploading(false)
-				setMainImage(null)
-				setUploadedImage(data.url)
-				setImageFile('')
-			})
-			.catch((err) => {
-				console.log(err)
-				setUploading(false)
-				setMainImage(null)
-				setImageFile('')
-			})
 	}
 
 	// console.log('url', url)
@@ -102,7 +119,7 @@ function DashboardApartmentAdd() {
 			typeOfApartment,
 			price,
 			facilities,
-			apartmentImages: uploadedImage,
+			apartmentImages: urlList,
 			apartmentInfo,
 			numberOfRooms,
 			numberOfToilets,
@@ -215,7 +232,7 @@ function DashboardApartmentAdd() {
 								onChange={(e) => setApartmentState(e.target.value)}
 							>
 								<option value=''> --select-- </option>
-								<option value='ikeja'>Ikeja</option>
+								<option value='lagos'>Lagos</option>
 							</select>
 						</div>
 					</div>
@@ -319,7 +336,7 @@ function DashboardApartmentAdd() {
 					<div className='facilities__images'>
 						<p className='facilities__images-text'>Upload Images</p>
 						<label>
-							{!uploadedImage ? (
+							{uploadedImage == '' ? (
 								<svg
 									width='100'
 									height='100'
@@ -358,37 +375,42 @@ function DashboardApartmentAdd() {
 									/>
 								</svg>
 							) : (
-								<img
-									src={uploadedImage}
-									style={{
-										width: '8rem',
-										height: '8rem',
-										border: '1px solid #333',
-										padding: '7px',
-									}}
-								/>
+								<>
+									{mainImage &&
+										mainImage.map((item) => (
+											<img
+												key={i++}
+												src={item.base64}
+												style={{
+													width: '8rem',
+													height: '8rem',
+													border: '1px solid #333',
+													padding: '7px',
+												}}
+											/>
+										))}
+								</>
 							)}
-							{!uploadedImage && (
-								<input
-									type='file'
-									// onChange={(e) => setImage(e.target.files[0])}
-									onChange={handleFileInputChange}
-									multiple
-									style={{ display: 'none' }}
-								/>
-							)}
+							<input
+								type='file'
+								// onChange={(e) => setImage(e.target.files[0])}
+								onChange={handleFileInputChange}
+								multiple
+								// style={{ display: 'none' }}
+							/>
 							{imageFile && (
-								<div className='col-md-6'>
-									<img
+								<div className='col-md-12'>
+									{/* <img
 										src={`data:image/${imageFormat};base64,${imageFile}`}
 										className='img-fluid'
 										alt='User'
 										height='150px'
 										width='150px'
-									/>
+									/> */}
+									{/* <p> {fileLength} Files selected. </p> */}
 									<div className='mt-2'>
 										<button
-											className='tag-btn'
+											className='btn btn-primary'
 											onClick={uploadFileHandler}
 											disabled={uploading ? true : false}
 										>
@@ -405,8 +427,8 @@ function DashboardApartmentAdd() {
 								className='site-form mb-3 d-none'
 							/>
 						</label>
-						<div></div>
 					</div>
+
 					<button
 						className='profile__button facilities__button'
 						type='submit'

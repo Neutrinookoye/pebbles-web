@@ -128,3 +128,37 @@ export const get_user_details = () => async (dispatch, getState) => {
 		toast.error(message, { position: 'top-right' })
 	}
 }
+
+export const update_user = (obj) => async (dispatch, getState) => {
+	try {
+		dispatch({ type: types.USER_UPDATE_REQUEST })
+
+		const {
+			userLogin: { userDetail },
+		} = getState()
+
+		const { data } = await axios.put(`${url}/users`, obj, {
+			headers: authHeader(userDetail.token),
+		})
+
+		if (data.message === 'success') {
+			dispatch({
+				type: types.USER_UPDATE_SUCCESS,
+				payload: data.data,
+			})
+			dispatch(get_user_details())
+			toast.success('User account has been updated!', {
+				position: 'top-right',
+			})
+		}
+	} catch (error) {
+		const message = error.response
+			? error.response.data.message
+			: 'Something went wrong'
+		if (message === 'Not Authorized') {
+			dispatch(user_logout())
+		}
+		dispatch({ type: types.USER_UPDATE_FAIL, payload: message })
+		toast.error(message, { position: 'top-right' })
+	}
+}

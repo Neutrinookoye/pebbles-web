@@ -130,7 +130,37 @@ export const search_apartments = (loc) => async (dispatch, getState) => {
 		if (message === 'Not Authorized') {
 			dispatch(user_logout())
 		}
-		dispatch({ type: types.SEARCH_APARTMENTS_RESET, payload: message })
+		dispatch({ type: types.SEARCH_APARTMENTS_FAIL, payload: message })
 		toast.error(message, { position: 'top-right' })
+	}
+}
+
+export const nearby_apartments = () => async (dispatch, getState) => {
+	try {
+		dispatch({ type: types.GET_NEARBY_APARTMENTS_REQUEST })
+
+		const {
+			userLogin: { userDetail },
+		} = getState()
+
+		const { data } = await axios.get(`${url}/apartments/near/you`, {
+			headers: authHeader(userDetail.token),
+		})
+
+		if (data.message === 'success') {
+			dispatch({
+				type: types.GET_NEARBY_APARTMENTS_SUCCESS,
+				payload: data.data,
+			})
+		}
+	} catch (error) {
+		const message = error.response
+			? error.response.data.message
+			: 'Something went wrong'
+		if (message === 'Not Authorized') {
+			dispatch(user_logout())
+		}
+		dispatch({ type: types.GET_NEARBY_APARTMENTS_FAIL, payload: message })
+		// toast.error(message, { position: 'top-right' })
 	}
 }

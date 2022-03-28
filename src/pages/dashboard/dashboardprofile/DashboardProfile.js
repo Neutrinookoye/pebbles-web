@@ -3,13 +3,19 @@ import { useSelector, useDispatch } from 'react-redux'
 import Loader from '../../../components/Loader'
 import './DashboardProfile.scss'
 import AdminHeader from '../../../components/AdminHeader/AdminHeader'
-import { get_user_details } from '../../../redux/actions/userActions'
+import {
+	get_user_details,
+	update_user,
+} from '../../../redux/actions/userActions'
 
 function DashboardProfile() {
 	const dispatch = useDispatch()
 
 	const getUserProfile = useSelector((state) => state.getUserProfile)
 	const { loading, userProfile } = getUserProfile
+
+	const userUpdate = useSelector((state) => state.userUpdate)
+	const { loading: loadingUpdate, success } = userUpdate
 
 	const [fullName, setFullName] = useState('')
 	const [email, setEmail] = useState('')
@@ -18,8 +24,26 @@ function DashboardProfile() {
 	const [country, setCountry] = useState('')
 	const [city, setCity] = useState('')
 
+	const [validId, setValidId] = useState('')
+	const [profilePicture, setProfilePicture] = useState('')
+
 	const userLogin = useSelector((state) => state.userLogin)
 	const { userDetail } = userLogin
+
+	const updateHandler = (e) => {
+		e.preventDefault()
+		let data = {
+			fullName,
+			phoneNumber,
+			state,
+			country,
+			city,
+			// profilePicture,
+			email,
+			// validId,
+		}
+		dispatch(update_user(data))
+	}
 
 	useEffect(() => {
 		if (!userProfile || userProfile.user._id != userDetail.userDetails._id) {
@@ -35,7 +59,7 @@ function DashboardProfile() {
 		//   return () => {
 		//     second
 		//   }
-	}, [dispatch, userDetail, userProfile.user._id])
+	}, [dispatch, userDetail, userProfile.user._id, success])
 
 	return (
 		<div className='profile'>
@@ -44,7 +68,7 @@ function DashboardProfile() {
 				<Loader />
 			) : userProfile ? (
 				<div className='dashboardmain__apartment'>
-					<form className='profile__form'>
+					<form className='profile__form' onSubmit={updateHandler}>
 						<div className='profile__flex'>
 							{/* <div className='profile__form-group'>
 										<label className='profile__form-label'>Last name</label>
@@ -138,7 +162,17 @@ function DashboardProfile() {
 								</label>
 							</div>
 						</div>
-						<button className='profile__button'>Edit</button>
+						<button
+							className='profile__button'
+							type='submit'
+							disabled={loading ? true : false}
+						>
+							{loadingUpdate ? (
+								<i className='fas fa-spinner fa-spin'></i>
+							) : (
+								<span>Update</span>
+							)}
+						</button>
 					</form>
 				</div>
 			) : (

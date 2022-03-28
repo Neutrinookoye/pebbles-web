@@ -32,7 +32,7 @@ const SavedApartments = () => {
 				<div className='container saved_apa_cont'>
 					<div className='row'>
 						{apartments.apartments.map((apa, i) => (
-							<div className='col-md-12 saved_apartments'>
+							<div className='col-md-12 saved_apartments mb-4'>
 								<div className='row saved_apartments_row'>
 									<div className='col-md-3'>
 										<img

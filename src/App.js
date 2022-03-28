@@ -49,6 +49,11 @@ function App() {
 						/>
 						<Route exact path='/become-host' element={<BecomeHost />} />
 						<Route exact path='/confirm-number' element={<ConfirmNumber />} />
+						{/* <Route
+							exact
+							path='/apartments/:id'
+							element={<ApartmentDetails />}
+						/> */}
 						<Route exact path='/start-booking' element={<StartBooking />} />
 						<Route exact path='/' element={<HomePage />} />
 						<Route exact path='/explore-events' element={<ExploreEvents />} />

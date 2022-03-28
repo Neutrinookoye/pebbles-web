@@ -77,3 +77,21 @@ export const updateApartmentDetailReducer = (state = {}, action) => {
 			return state
 	}
 }
+
+export const getNearbyApartmentsReducer = (
+	state = { nearbyApartments: [] },
+	action
+) => {
+	switch (action.type) {
+		case types.GET_NEARBY_APARTMENTS_REQUEST:
+			return { loading: true, nearbyApartments: [] }
+		case types.GET_NEARBY_APARTMENTS_SUCCESS:
+			return { loading: false, nearbyApartments: action.payload }
+		case types.GET_NEARBY_APARTMENTS_FAIL:
+			return { loading: false, error: action.payload, nearbyApartments: [] }
+		case types.GET_NEARBY_APARTMENTS_RESET:
+			return {}
+		default:
+			return state
+	}
+}

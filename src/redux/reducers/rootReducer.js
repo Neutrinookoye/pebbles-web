@@ -5,6 +5,7 @@ import {
 	getUserApartmentReducer,
 	searchApartmentReducer,
 	updateApartmentDetailReducer,
+	getNearbyApartmentsReducer,
 } from './apartmentReducer'
 import {
 	createBookingReducer,
@@ -15,18 +16,21 @@ import {
 	userRegisterReducer,
 	userLoginReducer,
 	getUserProfileReducer,
+	userUpdateReducer,
 } from './userReducer'
 
 const reducer = combineReducers({
 	userRegister: userRegisterReducer,
 	userLogin: userLoginReducer,
 	getUserProfile: getUserProfileReducer,
+	userUpdate: userUpdateReducer,
 
 	createApartment: createApartmentReducer,
 	getUserApartment: getUserApartmentReducer,
 	getApartmentDetails: getApartmentDetailsReducer,
 	searchApartment: searchApartmentReducer,
 	updateApartmentDetail: updateApartmentDetailReducer,
+	getNearbyApartments: getNearbyApartmentsReducer,
 
 	createBooking: createBookingReducer,
 	getBookedApartment: getBookedApartmentReducer,
