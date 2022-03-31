@@ -71,40 +71,48 @@ function DashboardApartmentAdd() {
 					console.log(err)
 				})
 		}
-		await uploadFileHandler(e)
+		uploadFileHandler(e, file)
 	}
 
-	const uploadFileHandler = (e) => {
+	const uploadFileHandler = (e, f) => {
 		e.preventDefault()
-		const data = new FormData()
-		mainImage.map((main) => {
-			data.append('file', main)
-			// data.append('image', main)
-			data.append('upload_preset', 'pebbles')
-			data.append('cloud_name', 'pebbles-signature')
+		if (parseInt(mainImage.length) < 5) {
+			const data = new FormData()
+			mainImage.map((main) => {
+				data.append('file', main)
+				// data.append('image', main)
+				data.append('upload_preset', 'pebbles')
+				data.append('cloud_name', 'pebbles-signature')
 
-			setUploading(true)
+				setUploading(true)
 
-			fetch('https://api.cloudinary.com/v1_1/pebbles-signature/image/upload', {
-				method: 'post',
-				body: data,
+				fetch(
+					'https://api.cloudinary.com/v1_1/pebbles-signature/image/upload',
+					{
+						method: 'post',
+						body: data,
+					}
+				)
+					.then((resp) => resp.json())
+					.then((data) => {
+						setUploading(false)
+						// setMainImage(null)
+						setUploadedImage(data.url)
+						urlList.push(data.url)
+						console.log(urlList)
+						setImageFile('')
+					})
+					.catch((err) => {
+						console.log(err)
+						setUploading(false)
+						// setMainImage(null)
+						setImageFile('')
+					})
 			})
-				.then((resp) => resp.json())
-				.then((data) => {
-					setUploading(false)
-					// setMainImage(null)
-					setUploadedImage(data.url)
-					urlList.push(data.url)
-					console.log(urlList)
-					setImageFile('')
-				})
-				.catch((err) => {
-					console.log(err)
-					setUploading(false)
-					// setMainImage(null)
-					setImageFile('')
-				})
-		})
+		} else {
+			mainImage.length = 0
+			alert('You can only upload a maximum of 5 images.')
+		}
 	}
 
 	// console.log('url', url)
@@ -334,7 +342,11 @@ function DashboardApartmentAdd() {
 						></textarea>
 					</div>
 					<div className='facilities__images'>
-						<p className='facilities__images-text'>Upload Images</p>
+						<p className='facilities__images-text'>
+							Upload Images{' '}
+							<span style={{ fontSize: '11px' }}>(Maximum of 5 images)</span>
+						</p>
+
 						<label>
 							{uploadedImage == '' ? (
 								<svg

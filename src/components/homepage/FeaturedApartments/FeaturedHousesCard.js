@@ -55,8 +55,8 @@ const FeaturedHousesCard = ({ houses }) => {
 	return (
 		<Slider {...settings} className='featured-houses'>
 			{houses.map((house) => (
-				<div className='post-card' key={house.id}>
-					<Link to=''>
+				<div className='post-card' key={house._id}>
+					<Link to={`/apartments/${house._id}`}>
 						<div className='post-image'>
 							<img src={house.apartmentImages[0]} alt='' />
 						</div>

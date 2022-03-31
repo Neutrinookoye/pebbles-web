@@ -1,8 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import logo from '../../assets/logo2.svg'
 
 const SideBar = () => {
+	const userLogin = useSelector((state) => state.userLogin)
+	const { userDetail } = userLogin
+
 	return (
 		<div className='sidebar'>
 			<div className='sidebaricon'>
@@ -159,7 +163,11 @@ const SideBar = () => {
 								stroke-linejoin='round'
 							/>
 						</svg>
-						<span>Saved apartments</span>
+						{userDetail.userDetails.role !== 'USER' ? (
+							<span>Saved apartments</span>
+						) : (
+							<span>Booked apartments</span>
+						)}
 					</NavLink>
 				</li>
 				<li>
@@ -194,48 +202,50 @@ const SideBar = () => {
 						<span>Notification</span>
 					</NavLink>
 				</li>
-				<li>
-					<NavLink
-						to='/dashboard/apartment/add'
-						exact
-						className='sidebaritem'
-						activeClassName='active'
-					>
-						<svg
-							width='22'
-							height='22'
-							viewBox='0 0 22 22'
-							fill='none'
-							xmlns='http://www.w3.org/2000/svg'
+				{userDetail.userDetails.role !== 'USER' && (
+					<li>
+						<NavLink
+							to='/dashboard/apartment/add'
+							exact
+							className='sidebaritem'
+							activeClassName='active'
 						>
-							<path
-								d='M12.1549 3.3L4.62907 11.2658C4.3449 11.5683 4.0699 12.1642 4.0149 12.5767L3.67574 15.5467C3.55657 16.6192 4.32657 17.3525 5.3899 17.1692L8.34157 16.665C8.75407 16.5917 9.33157 16.2892 9.61574 15.9775L17.1416 8.01166C18.4432 6.63666 19.0299 5.06916 17.0041 3.15333C14.9874 1.25583 13.4566 1.925 12.1549 3.3Z'
-								stroke='#A4A6B3'
-								stroke-width='1.5'
-								stroke-miterlimit='10'
-								stroke-linecap='round'
-								stroke-linejoin='round'
-							/>
-							<path
-								d='M10.8992 4.62915C11.2933 7.15915 13.3467 9.09332 15.895 9.34998'
-								stroke='#A4A6B3'
-								stroke-width='1.5'
-								stroke-miterlimit='10'
-								stroke-linecap='round'
-								stroke-linejoin='round'
-							/>
-							<path
-								d='M2.75 20.1666H19.25'
-								stroke='#A4A6B3'
-								stroke-width='1.5'
-								stroke-miterlimit='10'
-								stroke-linecap='round'
-								stroke-linejoin='round'
-							/>
-						</svg>
-						<span>List an apartment</span>
-					</NavLink>
-				</li>
+							<svg
+								width='22'
+								height='22'
+								viewBox='0 0 22 22'
+								fill='none'
+								xmlns='http://www.w3.org/2000/svg'
+							>
+								<path
+									d='M12.1549 3.3L4.62907 11.2658C4.3449 11.5683 4.0699 12.1642 4.0149 12.5767L3.67574 15.5467C3.55657 16.6192 4.32657 17.3525 5.3899 17.1692L8.34157 16.665C8.75407 16.5917 9.33157 16.2892 9.61574 15.9775L17.1416 8.01166C18.4432 6.63666 19.0299 5.06916 17.0041 3.15333C14.9874 1.25583 13.4566 1.925 12.1549 3.3Z'
+									stroke='#A4A6B3'
+									stroke-width='1.5'
+									stroke-miterlimit='10'
+									stroke-linecap='round'
+									stroke-linejoin='round'
+								/>
+								<path
+									d='M10.8992 4.62915C11.2933 7.15915 13.3467 9.09332 15.895 9.34998'
+									stroke='#A4A6B3'
+									stroke-width='1.5'
+									stroke-miterlimit='10'
+									stroke-linecap='round'
+									stroke-linejoin='round'
+								/>
+								<path
+									d='M2.75 20.1666H19.25'
+									stroke='#A4A6B3'
+									stroke-width='1.5'
+									stroke-miterlimit='10'
+									stroke-linecap='round'
+									stroke-linejoin='round'
+								/>
+							</svg>
+							<span>List an apartment</span>
+						</NavLink>
+					</li>
+				)}
 			</ul>
 		</div>
 	)

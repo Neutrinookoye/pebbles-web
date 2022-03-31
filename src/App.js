@@ -19,6 +19,7 @@ import ExploreEvents from './pages/EventsPages/ExploreEvents'
 import EventsInfo from './pages/EventsPages/EventsInfo'
 import ExploreApartments from './pages/exploreMoreApartments/ExploreMoreApartments'
 import ApartmentInfo from './pages/exploreMoreApartments/ApartmentInfo'
+import ApartmentDetails from './pages/apartmentDetails/ApartmentDetails'
 import MyApartment from './pages/myApartments/MyApartment'
 import MyApartmentInfo from './pages/myApartments/MyApartmentInfo'
 import SignupIndividual from './pages/auth/SignupIndividual'
@@ -49,11 +50,11 @@ function App() {
 						/>
 						<Route exact path='/become-host' element={<BecomeHost />} />
 						<Route exact path='/confirm-number' element={<ConfirmNumber />} />
-						{/* <Route
+						<Route
 							exact
 							path='/apartments/:id'
 							element={<ApartmentDetails />}
-						/> */}
+						/>
 						<Route exact path='/start-booking' element={<StartBooking />} />
 						<Route exact path='/' element={<HomePage />} />
 						<Route exact path='/explore-events' element={<ExploreEvents />} />
@@ -63,6 +64,11 @@ function App() {
 							element={<Navigate replace to='/dashboard/home' />}
 						/>
 						<Route path='/dashboard' element={<Index />}>
+							<Route
+								exact
+								path='my-apartment-info'
+								element={<MyApartmentInfo />}
+							/>
 							<Route path={`profile`} element={<DashboardProfile />} />
 							<Route
 								path={`apartment/add`}
@@ -89,11 +95,6 @@ function App() {
 						/>
 						<Route exact path='/apartment-info' element={<ApartmentInfo />} />
 						<Route exact path='/my-apartment' element={<MyApartment />} />
-						<Route
-							exact
-							path='/my-apartment-info'
-							element={<MyApartmentInfo />}
-						/>
 						{/* <Route exact path="/dashboard" component={DashboardHome} /> */}
 					</Routes>
 				</BrowserRouter>
