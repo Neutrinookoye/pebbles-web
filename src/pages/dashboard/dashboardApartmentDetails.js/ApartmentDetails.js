@@ -3,15 +3,14 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import Loader from '../../../components/Loader'
 import './DashboardProfile.scss'
-import AdminHeader from '../../../components/AdminHeader/AdminHeader'
 import { get_apartment_details } from '../../../redux/actions/apartmentActions'
 
 function DashboardProfile() {
 	const dispatch = useDispatch()
 
-    const params = useParams()
+	const params = useParams()
 
-    const userLogin = useSelector((state) => state.userLogin)
+	const userLogin = useSelector((state) => state.userLogin)
 	const { userDetail } = userLogin
 
 	const getApartmentDetails = useSelector((state) => state.getApartmentDetails)
@@ -42,7 +41,6 @@ function DashboardProfile() {
 
 	return (
 		<div className='profile'>
-			<AdminHeader title={'Profile'} />
 			{loading ? (
 				<Loader />
 			) : userProfile ? (

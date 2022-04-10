@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 // import Dropzone from 'react-dropzone'
 import { useDropzone } from 'react-dropzone'
 import axios from 'axios'
-import AdminHeader from '../../../components/AdminHeader/AdminHeader'
 import { useSelector, useDispatch } from 'react-redux'
 import { create_apartment } from '../../../redux/actions/apartmentActions'
 import { MultiSelect } from 'react-multi-select-component'
@@ -192,7 +191,6 @@ function DashboardApartmentAdd() {
 
 	return (
 		<div>
-			<AdminHeader title={'List an Apartment'} />
 			<div className='dashboardmain__apartment'>
 				<form className='profile__form'>
 					<div className='profile__flex'>

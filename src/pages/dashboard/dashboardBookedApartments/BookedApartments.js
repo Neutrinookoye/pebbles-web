@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import AdminHeader from '../../../components/AdminHeader/AdminHeader'
 import { useSelector, useDispatch } from 'react-redux'
 import {
 	get_apartment_bookings,
@@ -39,7 +38,6 @@ const SavedApartments = () => {
 
 	return (
 		<div>
-			<AdminHeader title={'Booked Apartments'} />
 			{loading ? (
 				<Loader />
 			) : bookedApartments &&

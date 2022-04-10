@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Loader from '../../../components/Loader'
 import './DashboardProfile.scss'
-import AdminHeader from '../../../components/AdminHeader/AdminHeader'
 import {
 	get_user_details,
 	update_user,
@@ -63,7 +62,7 @@ function DashboardProfile() {
 
 	return (
 		<div className='profile'>
-			<AdminHeader title={'Profile'} />
+			{/* <AdminHeader title={'Profile'} /> */}
 			{loading ? (
 				<Loader />
 			) : userProfile ? (
