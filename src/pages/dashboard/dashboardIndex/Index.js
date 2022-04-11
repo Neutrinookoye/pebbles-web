@@ -10,17 +10,6 @@ function Index(props) {
 	return (
 		<DashboardLayout>
 			<Outlet />
-			{/* <Switch>
-        <Route path={`${path}/dashboard/profile`}>
-          <DashboardProfile />
-        </Route>
-        <Route path={`${path}/apartment/add`}>
-          <DashboardApartmentAdd />X`
-        </Route>
-        <Route path={`${path}/dashboard`}>
-          <DashboardHome />
-        </Route>
-      </Switch> */}
 		</DashboardLayout>
 	)
 }

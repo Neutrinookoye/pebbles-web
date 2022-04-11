@@ -1,18 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, cloneElement } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Navigate, useLocation } from 'react-router-dom'
+import { Navigate, useNavigate, useLocation } from 'react-router-dom'
 import { user_logout } from '../../../redux/actions/userActions'
 
 import { FullScreen, useFullScreenHandle } from 'react-full-screen'
 import Navigation from '../../../components/Navigation'
 import BreadCrumb from '../../../components/BreadCrumb'
 import Dropdown from 'react-bootstrap/Dropdown'
+import menu from '../../../components/Navigation/menu'
 
 import './DashboardLayout.scss'
 import pics from '../../../assets/pics.png'
 
 const DashboardLayout = (props) => {
 	const dispatch = useDispatch()
+	const navigate = useNavigate()
+
+	const [allow, setAllow] = useState(false)
 
 	const userLogin = useSelector((state) => state.userLogin)
 	const { userDetail } = userLogin
@@ -37,11 +41,33 @@ const DashboardLayout = (props) => {
 
 	const location = useLocation()
 
-	if (!userLogin?.userDetail) {
-		return <Navigate to='/login' />
+	const checkPermissionHandler = (pathname) => {
+		let check = menu.items[0].children.find((e) => e.url == pathname)
+		if (check) {
+			if (check.permission.includes(userLogin.userDetail.userDetails.role)) {
+				setAllow(true)
+			} else {
+				setAllow(false)
+				navigate('/dashboard/home') //Navigate to a common page
+			}
+		} else {
+			console.log('Path not found') //Navigate to 404 page
+		}
 	}
 
-	return (
+	useEffect(() => {
+		if (!userLogin?.userDetail) {
+			return <Navigate to='/login' />
+		}
+	}, [userLogin])
+
+	useEffect(() => {
+		if (userLogin?.userDetail) {
+			checkPermissionHandler(location.pathname)
+		}
+	}, [userLogin, location])
+
+	return allow ? (
 		<FullScreen handle={handle}>
 			<Navigation openMenu={openMenu} toggleMenu={outsideClick} />
 			<div className='pcoded-main-container'>
@@ -86,6 +112,8 @@ const DashboardLayout = (props) => {
 				</div>
 			</div>
 		</FullScreen>
+	) : (
+		<></>
 	)
 }
 

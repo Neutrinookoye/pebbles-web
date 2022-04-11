@@ -164,7 +164,7 @@
 
 .cal1 {
 	position: absolute;
-	width: 100%;
+	/* width: 100%; */
 	left: 20%;
 	top: 4rem;
 	box-shadow: 2px 5px 10px #ccc;
@@ -172,7 +172,7 @@
 
 .cal2 {
 	position: absolute;
-	width: 100%;
+	/* width: 100%; */
 	left: 50%;
 	top: 4rem;
 	box-shadow: 2px 5px 10px #ccc;

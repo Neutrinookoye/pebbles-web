@@ -30,7 +30,7 @@ const Navigation = (props) => {
 						windowWidth={props.windowWidth}
 						onToggleNavigation={toggleNavigation}
 					/>
-					<NavContent navigation={navigation.items} />
+					<NavContent permission={'USER'} navigation={navigation.items} />
 				</div>
 			</OutsideClick>
 		</nav>

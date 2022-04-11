@@ -1,15 +1,15 @@
-import React from "react"
-import PerfectScrollbar from "react-perfect-scrollbar"
-import "react-perfect-scrollbar/dist/css/styles.css"
-import NavGroup from "./NavGroup"
+import React from 'react'
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import 'react-perfect-scrollbar/dist/css/styles.css'
+import NavGroup from './NavGroup'
 
-const NavContent = ({ navigation }) => {
+const NavContent = ({ navigation, permission }) => {
 	return (
-		<div className="navbar-content datta-scroll">
+		<div className='navbar-content datta-scroll'>
 			<PerfectScrollbar>
-				<ul className="nav pcoded-inner-navbar">
+				<ul className='nav pcoded-inner-navbar'>
 					{navigation.map((nav) => (
-						<NavGroup nav={nav} />
+						<NavGroup nav={nav} permission={permission} />
 					))}
 				</ul>
 			</PerfectScrollbar>

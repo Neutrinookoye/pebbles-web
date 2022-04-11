@@ -12,6 +12,7 @@ export default {
 					type: 'item',
 					url: '/dashboard/home',
 					icon: 'feather icon-home',
+					permission: ['USER', 'ADMIN', 'BUSINESS', 'INDIVIDUAL'],
 				},
 				{
 					id: 'profile',
@@ -19,6 +20,7 @@ export default {
 					type: 'item',
 					url: '/dashboard/profile',
 					icon: 'feather icon-user',
+					permission: ['USER', 'ADMIN', 'BUSINESS', 'INDIVIDUAL'],
 				},
 				{
 					id: 'bookings',
@@ -26,6 +28,7 @@ export default {
 					type: 'item',
 					url: '/dashboard/bookings',
 					icon: 'feather icon-user',
+					permission: ['USER', 'ADMIN', 'BUSINESS', 'INDIVIDUAL'],
 				},
 				{
 					id: 'saved-apartments',
@@ -33,6 +36,7 @@ export default {
 					type: 'item',
 					url: '/dashboard/saved-apartments',
 					icon: 'feather icon-user',
+					permission: ['USER', 'BUSINESS', 'INDIVIDUAL'],
 				},
 				{
 					id: 'notifications',
@@ -40,6 +44,7 @@ export default {
 					type: 'item',
 					url: '/dashboard/notifications',
 					icon: 'feather icon-user',
+					permission: ['USER', 'ADMIN', 'BUSINESS', 'INDIVIDUAL'],
 				},
 				{
 					id: 'list-an-apartment',
@@ -47,6 +52,7 @@ export default {
 					type: 'item',
 					url: '/dashboard/apartment/add',
 					icon: 'feather icon-user',
+					permission: ['BUSINESS', 'INDIVIDUAL'],
 				},
 			],
 		},

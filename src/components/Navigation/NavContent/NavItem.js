@@ -8,18 +8,14 @@ const NavItem = ({ item }) => {
 
 	return (
 		<>
-			{userDetail &&
-			userDetail.userDetails.role == 'USER' &&
-			item.title == 'List an Apartment' ? null : (
-				<li>
-					<NavLink to={item.url} className='nav-link'>
-						<span className='pcoded-micon'>
-							<i className={item.icon} />
-						</span>
-						<span className='pcoded-mtext'>{item.title}</span>
-					</NavLink>
-				</li>
-			)}
+			<li>
+				<NavLink to={item.url} className='nav-link'>
+					<span className='pcoded-micon'>
+						<i className={item.icon} />
+					</span>
+					<span className='pcoded-mtext'>{item.title}</span>
+				</NavLink>
+			</li>
 		</>
 	)
 }
