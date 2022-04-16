@@ -21,8 +21,9 @@
 	.b-title {
 		margin-left: 10px;
 		font-weight: 100;
-		color: #fff;
+		color: #333333;
 		font-size: 18px;
+		font-weight: 600;
 	}
 }
 
@@ -133,7 +134,6 @@
 	z-index: 1028;
 	position: relative;
 	display: flex;
-	min-height: $header-height;
 	padding: 0;
 	position: relative;
 	top: 0;
@@ -142,6 +142,10 @@
 	width: calc(100% - #{$Menu-width});
 	margin-left: $Menu-width;
 	transition: all 0.3s ease-in-out;
+
+	@media(max-width: 992px) {
+		min-height: $header-height;
+	}
 
 	.m-header {
 		display: none;
@@ -577,7 +581,8 @@
 }
 
 .navbar-brand {
-	background: $menu-dark-background;
+	// background: $menu-dark-background;
+	background: #fff;
 }
 
 .pcoded-header,
@@ -834,7 +839,7 @@
 	width: $Menu-width;
 	height: 100vh;
 	top: 0;
-	background: $menu-dark-background;
+	background: #fff;
 	color: $menu-dark-text-color;
 
 	.pcoded-submenu {
@@ -1099,8 +1104,8 @@
 			&.active,
 			&:focus,
 			&:hover {
-				color: #1dc4e9;
-				background-color: #fff;
+				color: #fff;
+				background-color: #00349A;
 			}
 
 			.pcoded-submenu > li {

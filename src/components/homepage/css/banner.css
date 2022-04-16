@@ -161,6 +161,13 @@
 	border-radius: 50%;
 	color: white;
 }
+.search-bar select {
+	font-size: .8rem;
+}
+.search-bar select:focus {
+	box-shadow: none;
+	width: 100;
+}
 
 .cal1 {
 	position: absolute;

@@ -8,6 +8,7 @@ import Navigation from '../../../components/Navigation'
 import BreadCrumb from '../../../components/BreadCrumb'
 import Dropdown from 'react-bootstrap/Dropdown'
 import menu from '../../../components/Navigation/menu'
+import NavHeader from '../../../components/NavHeader'
 
 import './DashboardLayout.scss'
 import pics from '../../../assets/pics.png'
@@ -70,6 +71,12 @@ const DashboardLayout = (props) => {
 	return allow ? (
 		<FullScreen handle={handle}>
 			<Navigation openMenu={openMenu} toggleMenu={outsideClick} />
+			<NavHeader
+				openMenu={openMenu}
+				toggleMenu={toggleMenu}
+				handle={() => handle.enter}
+			/>
+
 			<div className='pcoded-main-container'>
 				<div className='pcoded-wrapper'>
 					<div className='pcoded-content'>
@@ -101,7 +108,7 @@ const DashboardLayout = (props) => {
 									{userDetail && (
 										<span> {userDetail.userDetails.fullName} </span>
 									)}
-									<img src={pics} alt='avatar' />
+									{userDetail ? <img src={userDetail.userDetails.profilePicture}  alt='' /> : <img src={pics} alt='avatar' />}
 								</div>
 							</div>
 							<div className='main-body'>

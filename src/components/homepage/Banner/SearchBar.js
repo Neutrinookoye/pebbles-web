@@ -10,7 +10,7 @@ import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 import 'react-dates/initialize'
 
-import guestIcon from '../img/icons/guest-icon.png'
+import guestIcon from '../img/icons/house2-icon.svg'
 
 const SearchBar = () => {
 	const [show, setShow] = useState(false)
@@ -18,7 +18,7 @@ const SearchBar = () => {
 
 	const [location, setLocation] = useState('')
 	const [checkin, setCheckin] = useState('')
-	const [noOfGuest, setNoOfGuest] = useState('')
+	const [apartmentType, setApartmentType] = useState('')
 	const [checkout, setCheckout] = useState('')
 
 	const showToggler = () => {
@@ -106,10 +106,10 @@ const SearchBar = () => {
 
 					<div className='form-input-group'>
 						<label className='form-input-label' htmlFor='guestNo'>
-							<img className='icon' src={guestIcon} alt='' />
-							No. of Guest
+							<img className='icon' style={{ color: '#707070'}} src={guestIcon} alt='' />
+							Apartment
 						</label>
-						<input
+						{/* <input
 							className='form-input'
 							type='text'
 							name='guestNo'
@@ -117,7 +117,31 @@ const SearchBar = () => {
 							pattern='[0-9]'
 							value={noOfGuest}
 							onChange={(e) => setNoOfGuest(e.target.value)}
-						/>
+						/> */}
+						<select onChange={(e) => setApartmentType(e.target.value)} className='form-control' >
+							<option value="">-- select --</option>
+							<option value="BQ">BQ</option>
+							<option value="Studio">Studio</option>
+							<option value="1 Bedroom Flat">1 Bedroom Flat</option>
+							<option value="2 Bedrooms Flat">2 Bedrooms Flat</option>
+							<option value="3 Bedrooms Flat">3 Bedrooms Flat</option>
+							<option value="4 Bedrooms Flat">4 Bedrooms Flat</option>
+							<option value="5 Bedrooms Flat">5 Bedrooms Flat</option>
+							<option value="6 Bedrooms Flat">6 Bedrooms Flat</option>
+							<option value="7 Bedrooms Flat">7 Bedrooms Flat</option>
+							<option value="8 Bedrooms Flat">8 Bedrooms Flat</option>
+							<option value="9 Bedrooms Flat">9 Bedrooms Flat</option>							
+							<option value="10 Bedrooms Flat">10 Bedrooms Flat</option>
+
+							<option value="Flat">Flat</option>
+							<option value="Hotel Boutique">Hotel Boutique</option>
+							<option value="Terrace">Terrace</option>
+							<option value="Bungalow">Bungalow</option>
+							<option value="Detached">Detached</option>
+							<option value="Semi-Detached">Semi-Detached</option>
+							<option value="Cottage/Farmhouse/Ranch">Cottage/Farmhouse/Ranch</option>
+							<option value="Villa/Mansions">Villa/Mansions</option>
+						</select>
 					</div>
 				</div>
 

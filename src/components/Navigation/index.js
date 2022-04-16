@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux'
 import NavContent from './NavContent/index'
 import NavHead from './NavHead'
 import navigation from './menu'
@@ -6,6 +7,9 @@ import OutsideClick from '../OutsideClick'
 
 const Navigation = (props) => {
 	const [collapse, setCollapse] = useState(false)
+
+	const userLogin = useSelector((state) => state.userLogin)
+	const { userDetail } = userLogin
 
 	let toggleClass = [
 		'pcoded-navbar menu-light navbar-default brand-default drp-icon-style1 menu-item-icon-style1 active-default title-default',
@@ -23,14 +27,14 @@ const Navigation = (props) => {
 
 	return (
 		<nav className={toggleClass.join(' ')}>
-			<OutsideClick handleToggle={props.toggleMenu}>
+			<OutsideClick handleToggle={props.toggleMenu}> 
 				<div className='navbar-wrapper'>
 					<NavHead
 						collapseMenu={collapse}
 						windowWidth={props.windowWidth}
 						onToggleNavigation={toggleNavigation}
 					/>
-					<NavContent permission={'USER'} navigation={navigation.items} />
+					<NavContent permission={userDetail && userDetail.userDetails.role} navigation={navigation.items} />
 				</div>
 			</OutsideClick>
 		</nav>
