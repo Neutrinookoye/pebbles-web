@@ -17,41 +17,47 @@ const SideAttraction = ({ facilities }) => {
 				</div>
 
 				<div className='body'>
-					{/* facilities.map() */}
-					<figure>
-						<img src={showerEmoji} alt='popcorn emoji' />
-						<figcaption>Water</figcaption>
-					</figure>
-
-					<figure>
+					{facilities &&
+						facilities.map((e) => (
+							<figure>
+								<img
+									src={
+										e == 'swimming pool'
+											? showerEmoji
+											: e == '24/7 electricity'
+											? bulbEmoji
+											: e == 'parking lot'
+											? carEmoji
+											: e == 'security'
+											? badgeEmoji
+											: wallEmoji
+									}
+									alt='emoji'
+								/>
+								<figcaption> {e} </figcaption>
+							</figure>
+						))}
+					{/* <figure>
 						<img src={bulbEmoji} alt='headset emoji' />
 						<figcaption>Electricity</figcaption>
 					</figure>
-
 					<figure>
 						<img src={carkeyEmoji} alt='table tennis bat and ball emoji' />
 						<figcaption>Ensuite</figcaption>
 					</figure>
-
 					<figure>
 						<img src={carEmoji} alt='laughing emoji' />
 						<figcaption>Car Ride</figcaption>
 					</figure>
-
 					<figure>
 						<img src={badgeEmoji} alt='badge emoji' />
 						<figcaption>Security</figcaption>
 					</figure>
-
 					<figure>
 						<img src={wallEmoji} alt='wall emoji' />
 						<figcaption>Tiled</figcaption>
-					</figure>
+					</figure> */}
 				</div>
-
-				<p className='attractions-link'>
-					<Link to='#'>See all facilities</Link>
-				</p>
 			</div>
 		</section>
 	)

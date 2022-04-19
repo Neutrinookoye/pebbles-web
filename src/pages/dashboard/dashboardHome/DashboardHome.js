@@ -1,6 +1,13 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+
+import available from '../../../img/arrow_right.png'
+import prohibit from '../../../img/Prohibit.png'
 
 const DashboardHome = () => {
+	const userLogin = useSelector((state) => state.userLogin)
+	const { userDetail } = userLogin
+
 	return (
 		<div className='dashboardmain'>
 			{/* <AdminHeader title={'Overview'} /> */}
@@ -71,6 +78,24 @@ const DashboardHome = () => {
 									<span>16</span>
 								</div>
 							</div>
+							{userDetail && userDetail.userDetails.role !== 'USER' ? (
+								<>
+									<div className='col-lg-3 col-md-6'>
+										<div className='dashboardmain__apartment--booked'>
+											<img src={available} alt='' />
+											<h4>Available apartments</h4>
+											<span>43</span>
+										</div>
+									</div>
+									<div className='col-lg-3 col-md-6'>
+										<div className='dashboardmain__apartment--booked'>
+											<img src={prohibit} alt='' />
+											<h4>Busy apartments</h4>
+											<span>3</span>
+										</div>
+									</div>
+								</>
+							) : null}
 						</div>
 					</div>
 				</div>

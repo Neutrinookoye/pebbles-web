@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 // import Dropzone from 'react-dropzone'
 import { useDropzone } from 'react-dropzone'
 import axios from 'axios'
@@ -20,6 +20,7 @@ function DashboardApartmentAdd() {
 	const [typeOfApartment, setTypeOfApartment] = React.useState('')
 	const [price, setPrice] = React.useState(0)
 	const [facilities, setFacilities] = React.useState([])
+	let [facilitiesNew, setFacilitiesNew] = React.useState([])
 	const [apartmentImages, setApartmentImages] = React.useState([])
 	const [fileLength, setFileLength] = React.useState('')
 	const [urlList, setUrlList] = React.useState([])
@@ -118,6 +119,7 @@ function DashboardApartmentAdd() {
 
 	const submitHandler = (e) => {
 		e.preventDefault()
+		console.log(facilitiesNew)
 		let data = {
 			apartmentName,
 			address,
@@ -125,7 +127,7 @@ function DashboardApartmentAdd() {
 			apartmentState,
 			typeOfApartment,
 			price,
-			facilities,
+			facilities: facilitiesNew,
 			apartmentImages: urlList,
 			apartmentInfo,
 			numberOfRooms,
@@ -181,6 +183,8 @@ function DashboardApartmentAdd() {
 	// 	)
 	// }
 
+	console.log(facilitiesNew)
+
 	const options = [
 		{ label: 'Swimming Pool ', value: 'swimming pool' },
 		{ label: '24/7 Electricity ', value: '24/7 electricity' },
@@ -188,6 +192,14 @@ function DashboardApartmentAdd() {
 		{ label: 'Security ', value: 'security' },
 		{ label: 'Wifi ', value: 'wifi' },
 	]
+
+	useEffect(() => {
+		if (facilities) {
+			let newf = facilities.map((e) => e.value)
+			setFacilitiesNew(newf)
+			console.log(facilitiesNew)
+		}
+	}, [facilities])
 
 	return (
 		<div>

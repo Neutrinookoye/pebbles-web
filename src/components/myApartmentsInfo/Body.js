@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { SRLWrapper } from 'simple-react-lightbox'
+import Slider from 'react-slick'
 import { comma } from '../helpers'
 import star from '../../img/Shape.png'
 
@@ -10,6 +11,7 @@ const Body = ({
 	image2,
 	image2Alt,
 	image3,
+	images,
 	image3Alt,
 	bedroomNo,
 	bathroomNo,
@@ -17,39 +19,97 @@ const Body = ({
 	parlorNo,
 	apartmentPrice,
 }) => {
+	let settings = {
+		dots: true,
+		infinite: true,
+		speed: 1000,
+		slidesToShow: 2,
+		slidesToScroll: 1,
+		arrows: true,
+		autoplay: true,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					infinite: true,
+				},
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					initialSlide: 2,
+				},
+			},
+			{
+				breakpoint: 767,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				},
+			},
+		],
+	}
+
+	let i = 0
+
 	return (
 		<section className='apartment-info-body'>
 			<div className='body-wrapper'>
-				<SRLWrapper>
-					<div className='apartment-images'>
-						<div className='apartment-img-container'>
-							<a href={image1}>
-								<img src={image1} alt={image1Alt} />
-							</a>
-						</div>
+				<Slider {...settings}>
+					{images &&
+						images.map((e) => (
+							<div key={i++} className=''>
+								<img
+									src={e}
+									alt={image1Alt}
+									style={{ width: '100%', height: '22rem' }}
+								/>
+							</div>
+						))}
+				</Slider>
+				{/* <Slider {...settings}>
+						<div className='apartment-images'>
+							<div className='col-md-4'>
+								<img
+									src={image1}
+									alt={image1Alt}
+									style={{ width: '22rem', height: '22rem' }}
+								/>
+							</div>
 
-						<div className='apartment-img-container'>
-							<img src={image2} alt={image2Alt} />
-						</div>
+							<div className='col-md-4'>
+								<img
+									src={image2}
+									alt={image2Alt}
+									style={{ width: '22rem', height: '22rem' }}
+								/>
+							</div>
 
-						<div className='apartment-img-container'>
-							<img src={image3} alt={image3Alt} />
-						</div>
-						<div className='apartment-img-container'>
-							<img src={image2} alt={image2Alt} />
-						</div>
+							<div className='apartment-img-container'>
+								<img
+									src={image3}
+									alt={image3Alt}
+									style={{ width: '22rem', height: '22rem' }}
+								/>
+							</div>
+							<div className='apartment-img-container'>
+								<img src={image2} alt={image2Alt} />
+							</div>
 
-						<div className='apartment-img-container'>
-							<img src={image3} alt={image3Alt} />
-							<p className='more-photos'>
-								<Link to='#/'>More photos</Link>
-							</p>
+							<div className='apartment-img-container'>
+								<img src={image3} alt={image3Alt} />
+								<p className='more-photos'>
+									<Link to='#/'>More photos</Link>
+								</p>
+							</div>
+							<button className='more-photos'>More photos</button>
 						</div>
-						{/* <button className="more-photos">More photos</button> */}
-					</div>
-				</SRLWrapper>
-
-				<div className='apartment__info__wrapper'>
+					</Slider> */}
+				<div className='apartment__info__wrapper mt-5'>
 					<div className='apartment-description'>
 						<div className='rooms'>
 							<span>
@@ -94,6 +154,35 @@ const Body = ({
 								<span>
 									<img src={star} alt='' /> 4.6 (23 reviews)
 								</span>
+							</div>
+							<div className='col-md-12'>
+								<div>
+									<form action=''>
+										<div className='row no-gutters'>
+											<div className='col-md-6'>
+												<label htmlFor=''>Check-in</label>
+												<span>
+													From: <input type='date' name='' id='' />{' '}
+												</span>
+											</div>
+											<div className='col-md-6'>
+												<label htmlFor=''>Check-out</label>
+												<span>
+													To: <input type='date' name='' id='' />{' '}
+												</span>
+											</div>
+											<div className='col-md-12'>
+												<label htmlFor=''>Guest</label>
+												<input type='number' required />
+											</div>
+											<div className='col-md-12'>
+												<button type='submit' className='btn add-review'>
+													Check availability
+												</button>
+											</div>
+										</div>
+									</form>
+								</div>
 							</div>
 						</div>
 					</div>

@@ -120,6 +120,11 @@ const ApartmentDetails = () => {
 							apartmentDetails.apartment.apartmentImages[4]
 						}
 						image5Alt={apartmentInfo.image3Alt}
+						images={
+							apartmentDetails &&
+							apartmentDetails.apartment &&
+							apartmentDetails.apartment.apartmentImages
+						}
 						bedroomNo={
 							apartmentDetails &&
 							apartmentDetails.apartment &&
